@@ -1,0 +1,24 @@
+include ../inc/var.pug
+include ../inc/mixins.pug
+doctype html
+html(lang="ru" dir="ltr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+
+    block title
+      title Title
+
+    link(href="styles/libs.min.css" rel="stylesheet")
+    link(href="styles/main.css" rel="stylesheet")
+
+  body
+    include ../blocks/header.pug
+
+    block content
+
+    include ../blocks/footer.pug
+
+    script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+    script(type="text/javascript" src="scripts/libs.min.js")
+    script(type="text/javascript" src="scripts/main.js")

@@ -1,0 +1,31 @@
+.shops-view
+  .container
+    .shops-view__title.h1
+      .shops-view__title-mark 1337
+      |  магазинов с кэшбэком
+
+    .shops-view__list
+      each shop in shops
+        .shops-view__item
+          a.card.card--shop(href="#!")
+            if shop.top
+              .card__label ТОП
+
+            if shop.boost
+              .card__label.card__label--green Кэшбэк 2x
+
+            if shop.action
+              .card__label.card__label--red Акция
+
+            .card__logo-wrapper
+              img.card__logo-img(src=shop.logo)
+
+            .card__cashback
+              .card__cashback-text Кэшбэк до
+
+              .card__cashback-value!= shop.percent + '<div class="card__cashback-small">%</div>'
+                if shop.boost
+                  .card__cashback-value-old= shop.boost + "%"
+
+    .shops-view__btn-wrapper
+      a.btn.btn--big(href="#!") Все магазины с кэшбэком

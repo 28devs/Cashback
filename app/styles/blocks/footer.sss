@@ -1,0 +1,99 @@
+.footer
+  background: #000
+  padding-top: 40px @md 55px @xl 80px
+
+  &__row
+    box: space-between
+    flex-wrap: wrap @lg nowrap
+    margin-bottom: 0 @lg 52px
+
+  &__col
+    box: vertical center @md left
+    width: 100% @md 45% @lg 20% @xl auto
+    margin-bottom: 35px @lg 0
+    text: @md-down center
+
+    &:nth-child(1)
+      max-width: @md 286px
+
+    &:nth-child(2), &:nth-child(3)
+      order: @sm-down 4
+
+  &__panel
+    margin-top: 21px @lg 31px
+
+  &__title
+    text: #fff 20px center @md left
+    margin-bottom: 10px @md 13px
+
+  &__text
+    text: #fff 100 16px 1.62
+
+  &__link
+    text: rgba(255, 255, 255, 0.5) 100 16px 1.62 none
+    margin-bottom: 1px
+
+    &:hover
+      text-decoration: underline
+
+    &--white
+      color: #fff
+
+  &__google-play, &__app-store
+    display: inline-block
+    size: 133px 40px
+    transition: .1s ease
+    margin-bottom: 5px
+    margin: @sm-down * 5px
+
+    &:hover
+      filter: brightness(1.1)
+
+  &__google-play
+    background: resolve("icons/google-play.svg")
+    margin-right: 0 @sm 15px @lg 20px
+
+  &__app-store
+    background: resolve("icons/app-store.svg")
+
+  &__payments
+    display: block
+
+    &-list
+      box: horizontal center @md space-between
+      flex-wrap: wrap @md nowrap
+      margin-top: 26px
+      margin-right: -10px
+
+    &-item
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      border-radius: 4px
+      size: calc(100% / 2 - 10px) 50px @sm calc(100% / 4 - 10px) 50px @md 88px 50px @lg 110px 60px @xl 130px 80px
+      box: center middle
+      margin-bottom: 10px @md 0
+      margin-right: 10px @md 0
+      max-width: @md-down 110px
+
+      &:nth-child(1):after
+        width: @xl 75px
+
+      &:after
+        content: ""
+        display: block
+        padding-top: 30px @sm 30% @md 34% @lg 27%
+        width: 66px @lg 75px @xl 95px
+
+      @each $icon in visa, mastercard, yandex-money, mobile-pay, qiwi, paypal, webmoney
+        &--$icon:after
+          background: svg-load("icons/$icon.svg") no-repeat center / contain
+
+  &__bottom
+    border-top: 1px solid rgba(255, 255, 255, 0.1)
+    margin-top: 15px @sm 30px @md 39px @lg 59px
+    padding: 22px * @lg 27px *
+    box: horizontal center wrap @sm space-between center
+
+  &__copy
+    text: rgba(255, 255, 255, 0.5) 100 center
+    width: @sm-down 100%
+    margin-top: @sm-down 20px

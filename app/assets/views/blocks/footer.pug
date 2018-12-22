@@ -1,0 +1,47 @@
+footer.footer
+  .footer__container.container
+    .footer__row
+      .footer__col
+        .footer__title Servicename
+        a.footer__link(href="#!") Пользовательское соглашение и политика конфиденциальности
+
+        .footer__panel
+          a.footer__google-play(href="#!")
+          a.footer__app-store(href="#!")
+
+      .footer__col
+        .footer__title Полезные ссылки
+        a.footer__link(href="#!") Как работает кэшбэк
+        a.footer__link(href="#!") Расширение для браузера
+        a.footer__link(href="#!") Реферальная программа
+        a.footer__link(href="#!") Программа лояльности
+        a.footer__link(href="#!") Правила покупок с кэшбэком
+
+      .footer__col
+        .footer__title Сотрудничество
+        a.footer__link(href="#!") Партнерская программа
+        a.footer__link(href="#!") Добавить магазин
+        a.footer__link(href="#!") Контакты
+
+      .footer__col
+        .footer__title Помощь
+        a.footer__link(href="#!") Обращение в службу заботы
+        a.footer__link(href="#!") Вопросы и ответы
+
+        .footer__panel
+          a.footer__link.footer__link--white(href="tel:0 (800) 33-00-15") 0 (800) 33-00-15
+          .footer__text Звонки по Украине бесплатные<br>пн-пт 09:00–18:00
+
+    .footer__payments
+      .footer__title Способы вывода кэшбэка
+
+      .footer__payments-list
+        each item in ["visa", "mastercard", "yandex-money", "mobile-pay", "qiwi", "paypal", "webmoney"]
+          .footer__payments-item(class="footer__payments-item--" + item)
+
+    .footer__bottom
+      .footer__social.social
+        each item in ["facebook", "instagram", "telegram", "vk", "twitter"]
+          a.social__link(href="#!" class="social__link--" + item)
+
+      .footer__copy © 2018 Servicename

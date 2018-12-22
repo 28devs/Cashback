@@ -1,0 +1,52 @@
+.btn
+  padding: * 1.5rem
+  text: #fff 300 16px
+  text-decoration: none
+  font-family: $font
+  border: 0
+  outline: 0
+  cursor: pointer
+  transition: .1s ease
+  border-radius: 4px
+  background: $main
+  user-select: none
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  height: 40px
+
+  &:hover
+    background: #ff772a
+    border-color: #ff772a
+    color: #fff
+
+  &:active
+    background: #ea5600
+    border-color: #ea5600
+    color: #fff
+
+  &--big
+    height: 50px
+    width: @sm-down 100%
+    padding: * 20px @sm * 55px
+
+  &--large
+    height: 60px
+    width: @sm-down 100%
+    text: 18px @md 20px
+    padding: * 20px @sm * 55px
+
+  &--outline
+    text: 500 $main
+    background: transparent
+    border: 2px solid $main
+
+    &:hover
+      background: $main
+      border-color: $main
+      color: #fff
+
+    &:active
+      background: #ea5600
+      border-color: #ea5600
+      color: #fff

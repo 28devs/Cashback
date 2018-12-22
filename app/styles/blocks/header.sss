@@ -1,0 +1,106 @@
+.header
+  background: #fff
+  border-bottom: 1px solid #E0E0E0
+  position: fixed 0 0 null 0
+  z-index: 99
+
+  &__container
+    box: center space-between
+    height: 60px @md 80px
+
+  &__logo
+    size: 40px
+    min-width: 40px
+    background: #efefef
+    border-radius: 50%
+
+  &__search
+
+    &-form
+      width: 100% @md 330px @lg 350px @xl 300px
+      max-width: 350px
+      margin: * 20px @sm * 28px @md 0
+      position: relative
+
+    &-input
+      padding-left: @md-down 11px
+      padding-right: 38px
+
+      &:focus + ^&-btn
+        background-color: $main
+        background-image: svg-load("icons/search.svg" fill: #fff)
+
+    &-btn
+      size: 40px
+      background: svg-load("icons/search.svg" fill: #757575) no-repeat center
+      border: 0
+      cursor: pointer
+      position: absolute 0 0 0 null
+      outline: 0
+      border-radius: 0 4px 4px 0
+      transition: .1s ease
+
+      &:hover
+        background-color: #efefef
+
+  &__nav
+    height: 100%
+    box:
+    position: @xl-down absolute -999px null null null
+
+    &-link
+      text: $dark 500 16px none
+      border-bottom: 2px solid transparent
+      box: center
+      transition: .1s ease
+      margin-bottom: -1px
+
+      &:not(:last-child)
+        margin-right: 28px @xl 48px
+
+      &:hover
+        color: $main
+
+      &.active
+        border-color: $main
+
+  &__account
+    box: horizontal right
+    position: @lg-down absolute -999px null null null
+
+    &-signin
+      margin-right: 20px
+
+    &-signin, &-signup
+      display: flex
+      width: 120px
+
+  &__mobile-menu
+    size: 26px 19px
+    min-width: 26px
+    display: flex @xl none
+    flex-direction: column
+    justify-content: space-between
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    user-select: none
+    transition: transform $transition
+
+    &-line
+      size: 100% 3px
+      background: $main
+      cursor: pointer
+      transition: transform $transition
+
+    &.open
+      transform: translateY(2px)
+
+      ^&-line
+        &:nth-child(1)
+          transform: rotate(45deg) translate(4px, 4px)
+
+        &:nth-child(2)
+          transform: scale(0)
+
+        &:nth-child(3)
+          transform: rotate(-45deg) translate(7px, -7px)

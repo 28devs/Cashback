@@ -1,0 +1,69 @@
+.card
+  background: #FFFFFF
+  box-shadow: 0px 5px 20px rgba(14, 23, 32, 0.07)
+  border-radius: 4px
+  display: block
+  text-decoration: none
+  position: relative
+  transition: $transition
+
+  &--shop
+    height: 100%
+    min-width: 116px
+
+    &:hover
+      box-shadow: 0px 10px 20px rgba(14, 23, 32, 0.15)
+
+  &__logo
+
+    &-wrapper
+      box: center middle
+      height: 110px @sm 120px
+
+    &-img
+      display: block
+      max-width: 100%
+
+  &__cashback
+    margin: * 20px
+    border-top: 1px solid #EAEAEA
+    padding: 15px * 15px @md 20px * 30px
+    text: center
+
+    &-text
+      text: $gray 300 13px @md 14px
+
+    &-value
+      text: $dark 34px @md 40px
+      display: inline-block
+      position: relative
+
+      &-old
+        text: #A2A2A2 20px
+        position: relative @sm absolute 0 null null 0
+        transform: @sm translate(-120%, 50%)
+
+        &:before
+          content: ""
+          display: block
+          border-bottom: 1px solid #A2A2A2
+          position: absolute 50% -3px null -3px
+
+    &-small
+      display: inline-block
+      text: 20px
+      margin-left: 4px
+
+  &__label
+    position: absolute 5px null null 5px
+    border-radius: 4px
+    background: $main
+    text: #fff 500 12px 20px
+    height: 20px
+    padding: * 12px
+
+    &--green
+      background: #00C853
+
+    &--red
+      background: #D40000

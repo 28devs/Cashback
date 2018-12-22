@@ -1,0 +1,23 @@
+.social
+  box: center
+
+  &__link
+    size: 40px @lg 45px
+    border-radius: 50%
+    background-color: #252525
+    background-repeat: no-repeat
+    background-position: center
+    transition: .1s ease
+
+    @each $icon in facebook, instagram, telegram, vk, twitter
+      &--$icon
+        background-image: svg-load("icons/$icon.svg")
+
+    &:not(:last-child)
+      margin-right: 16px @lg 26px
+
+    &:hover
+      background-color: #383838
+
+    &:active
+      background-color: #0c0c0c
