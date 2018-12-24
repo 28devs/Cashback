@@ -1,0 +1,55 @@
+mixin breadcrumbs(name)
+  .breadcrumbs
+    .breadcrumbs__item
+      a.breadcrumbs__link(href="#!") cashbackservice.com
+
+    .breadcrumbs__item= name
+
+
+mixin page-title(title, tip)
+  h2.page-title= title
+    if tip
+      .page-title__tip= tip
+
+
+mixin shop-card(shop)
+  .card.card--shop(class=[ shop.isFavorite && "card--is-favorite" ])
+    if shop.top
+      .card__label ТОП
+
+    if shop.boost
+      .card__label.card__label--green Кэшбэк 2x
+
+    if shop.action
+      .card__label.card__label--red Акция
+
+    button.card__add-to-favorite
+
+    .card__logo-wrapper
+      img.card__logo-img(src=shop.logo)
+
+    .card__cashback
+      .card__cashback-text Кэшбэк до
+
+      .card__cashback-value!= shop.percent + '<div class="card__cashback-small">%</div>'
+        if shop.boost
+          .card__cashback-value-old= shop.boost + "%"
+
+    .card__more-info
+      a.card__more-info-link(href="#!") Подробнее про кэшбэк в Rozetka
+
+      a.btn.btn--wide(href="#!") Активировать
+
+
+mixin profile-aside(active)
+  .profile__user
+    .profile__user-avatar
+    .profile__user-info
+      .profile__user-name Александр Ивченко
+      .profile__user-id ID: 7110559
+
+  nav.profile__nav
+    ul.profile__nav-list
+      each item in profileNav
+        li.profile__nav-item(class=[item.name === active ? "active" : ""])
+          a.profile__nav-link(href=item.url + ".html" class="profile__nav-link--" + item.icon)= item.name

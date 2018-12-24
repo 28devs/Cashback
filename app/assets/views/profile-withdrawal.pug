@@ -1,0 +1,33 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Вывод средств | Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Вывод средств")
+
+      main.profile__main
+        +page-title("Вывод средств")
+
+        .card
+          .card__content
+            .withdrawal__title Выберите способ вывода
+
+            .withdrawal__list
+              each item in withdrawalList
+                .withdrawal__item
+                  a.withdrawal__link(href="#!")
+                    if item.country
+                      .withdrawal__country= item.country
+
+                    .withdrawal__img(class="withdrawal__img--" + item.img)
+
+                    .withdrawal__text= item.text

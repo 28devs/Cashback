@@ -1,0 +1,148 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Мой кэшбэк и финансы | Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Мой кэшбэк и финансы")
+
+      main.profile__main
+        +page-title("Мой кэшбэк и финансы")
+
+        .profile__row
+          .profile__col
+            .card.card--balance
+              .card__circle-label.card__circle-label--currency
+              .card__content
+                .card__tip На балансе:
+                .card__large-value 1 200
+                  .card__large-value-currency ₽
+                a.btn.btn--outline.btn--small(href="/profile-withdrawal.html") Вывести средства
+
+          .profile__col
+            .card.card--balance
+              .card__circle-label.card__circle-label--wait
+              .card__content
+                .card__tip Ожидает начисления:
+                .card__large-value.card__large-value--gray 0
+                  .card__large-value-currency ₽
+                a.btn.btn--outline.btn--small(href="/profile-finances.html") Заказы и финансы
+
+        .card.card--top-space
+          .table.table--finances
+            .table__head
+              .table__col Дата
+              .table__col Описание
+              .table__col Кэшбэк
+              .table__col Статус
+
+            .table__row
+              .table__col
+                .table__time 02.03.2018
+                  .table__time-minute 16:55
+
+              .table__col
+                .table__desc
+                  .table__desc-key Заказ в:
+                  .table__desc-value.table__desc-value--shop Olympus
+
+                .table__desc
+                  .table__desc-key Номер заказа:
+                  .table__desc-value.table__desc-value--order OLP-00016887
+
+                .table__desc
+                  .table__desc-key Сумма заказа:
+                  .table__desc-value 24 000 руб.
+                .table__desc
+                  .table__desc-key Дата заказа:
+                  .table__desc-value 02.03.2018
+                .table__desc
+                  .table__desc-key Коды:
+                  .table__desc-value LETYBRONZE
+
+              .table__col
+                .table__price 21.79 руб
+
+              .table__col
+                .table__status В ожидании
+                  .table__status-popup 
+                    .table__status-popup-text Заказ должен подтвердиться до 
+                      .table__status-popup-mark 27.03.2018
+                      | . Это время необходимо магазину для подтверждения оплаты и уверенности, что заказ не будет возбращен.
+
+            .table__row
+              .table__col
+                .table__time 02.03.2018
+                  .table__time-minute 16:55
+
+              .table__col
+                .table__desc
+                  .table__desc-key Заказ в:
+                  .table__desc-value.table__desc-value--shop Olympus
+
+                .table__desc
+                  .table__desc-key Номер заказа:
+                  .table__desc-value.table__desc-value--order OLP-00016887
+
+                .table__desc
+                  .table__desc-key Сумма заказа:
+                  .table__desc-value 24 000 руб.
+                .table__desc
+                  .table__desc-key Дата заказа:
+                  .table__desc-value 02.03.2018
+                .table__desc
+                  .table__desc-key Коды:
+                  .table__desc-value LETYBRONZE
+
+              .table__col
+                .table__price 21.79 руб
+
+              .table__col
+                .table__status.table__status--rejected Отклонено
+                  .table__status-popup 
+                    .table__status-popup-text Заказ должен подтвердиться до 
+                      .table__status-popup-mark 27.03.2018
+                      | . Это время необходимо магазину для подтверждения оплаты и уверенности, что заказ не будет возбращен.
+
+            .table__row
+              .table__col
+                .table__time 02.03.2018
+                  .table__time-minute 16:55
+
+              .table__col
+                .table__desc
+                  .table__desc-key Заказ в:
+                  .table__desc-value.table__desc-value--shop Olympus
+
+                .table__desc
+                  .table__desc-key Номер заказа:
+                  .table__desc-value.table__desc-value--order OLP-00016887
+
+                .table__desc
+                  .table__desc-key Сумма заказа:
+                  .table__desc-value 24 000 руб.
+                .table__desc
+                  .table__desc-key Дата заказа:
+                  .table__desc-value 02.03.2018
+                .table__desc
+                  .table__desc-key Коды:
+                  .table__desc-value LETYBRONZE
+
+              .table__col
+                .table__price 21.79 руб
+
+              .table__col
+                .table__status.table__status--approved Одобрено
+                  .table__status-popup 
+                    .table__status-popup-text Заказ должен подтвердиться до 
+                      .table__status-popup-mark 27.03.2018
+                      | . Это время необходимо магазину для подтверждения оплаты и уверенности, что заказ не будет возбращен.
+

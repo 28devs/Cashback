@@ -6,19 +6,44 @@
   text-decoration: none
   position: relative
   transition: $transition
+  position: relative
 
   &--shop
     height: 100%
     min-width: 116px
+    overflow: hidden
+    border: 1px solid #fff
 
     &:hover
       box-shadow: 0px 10px 20px rgba(14, 23, 32, 0.15)
+      border-color: $main
+
+      ^^&__add-to-favorite
+        transform: translateY(0)
+        visibility: visible
+        opacity: .2
+
+      ^^&__logo-wrapper
+        transform: translateY(-120px)
+        opacity: 0
+
+      ^^&__cashback
+        transform: translateY(-112px)
+        border-top-color: transparent
+
+      ^^&__more-info
+        transform: translateY(-130px)
+        opacity: 1
+
+        &-link
+          margin-bottom: 32px
 
   &__logo
 
     &-wrapper
       box: center middle
       height: 110px @sm 120px
+      transition: .2s ease
 
     &-img
       display: block
@@ -29,6 +54,8 @@
     border-top: 1px solid #EAEAEA
     padding: 15px * 15px @md 20px * 30px
     text: center
+    transition: .25s ease
+    cursor: default
 
     &-text
       text: $gray 300 13px @md 14px
@@ -55,15 +82,244 @@
       margin-left: 4px
 
   &__label
-    position: absolute 5px null null 5px
+    position: absolute 4px null null 4px
+    z-index: 5
     border-radius: 4px
     background: $main
     text: #fff 500 12px 20px
     height: 20px
     padding: * 12px
+    transition: .18s ease
+    cursor: default
 
     &--green
       background: #00C853
 
     &--red
       background: #D40000
+
+  &__add-to-favorite
+    @extend .btn-reset
+    size: 24px
+    position: absolute 8px 8px null null
+    z-index: 5
+    background-image: svg-load("icons/star.svg" fill: $dark)
+    background-size: contain
+    transform: translateY(20px)
+    opacity: 0
+    visibility: hidden
+    transition: .2s ease
+
+    &:hover
+      opacity: .5 !important
+
+  &__more-info
+    position: absolute
+    padding: 0 20px 20px
+    transition: .3s ease
+    opacity: 0
+
+    &-link
+      text: $main 12px 1.5 center none
+      display: block
+      margin-bottom: 42px
+      transition: .4s ease
+
+      &:hover
+        text-decoration: underline
+
+  &--is-favorite
+    &:hover ^&__add-to-favorite
+      opacity: 1
+
+    ^&__add-to-favorite
+      background-image: svg-load("icons/star-fill.svg" fill: $main)
+      opacity: 1
+      transform: translateY(0)
+      visibility: visible
+
+  &__content
+    padding: 35px 40px 39px
+
+  &__tip
+    text: #AFAFAF 14px
+    box: space-between
+
+    &-value
+      text: $dark 700
+
+  &__big-value
+    text: 30px
+
+    &-currency
+      text: 300 20px
+      display: inline-block
+
+  &__large-value
+    text: 40px
+
+    &-currency
+      text: 300 20px
+      display: inline-block
+
+    &--gray
+      text: #B3B3B3
+
+  &__circle-label
+    size: 30px
+    box: center middle
+    border-radius: 50%
+    background: #000
+    position: absolute 10px 10px null null
+    background-size: contain
+    background-color: transparent
+    background-repeat: no-repeat
+    background-position: center
+
+    &--currency
+      background: $main
+
+      &:before
+        content: "₽"
+        display: block
+        text: #fff 20px
+        margin-right: -2px
+
+    &--wait
+      background-image: svg-load("icons/clock.svg" fill: #DADADA)
+
+    &--cart
+      background-image: svg-load("icons/cart.svg" fill: #DADADA)
+      border-radius: 0
+
+    &--refs
+      background-image: svg-load("icons/refs.svg" fill: $main)
+      border-radius: 0
+
+    &--small
+      size: 24px
+
+      &:before
+        text: #fff 18px
+
+  &__read-more
+    text: #AFAFAF 14px 1
+    text-decoration: none
+
+    &:after
+      content: ""
+      display: inline-block
+      margin-left: 7px
+      size: 5px 10px
+      background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+      transform: rotate(90deg)
+
+    &:hover
+      text-decoration: underline
+
+  &--balance
+    ^&__tip
+      margin-bottom: 3px
+
+    ^&__large-value
+      margin-bottom: 21px
+
+  &--status
+    margin: 20px *
+
+    ^&__content
+      display: flex
+      flex-wrap: wrap @md nowrap
+
+    ^&__big-value
+      box: space-between
+      align-items: baseline
+      border-bottom: 1px solid #EAEAEA
+      padding-bottom: 4px
+
+    ^&__tip
+      margin-bottom: 14px
+
+  &--email
+    margin: 20px *
+
+    ^&__content
+      display: flex
+      align-items: center
+      flex-wrap: wrap @md nowrap
+
+    ^&__info-title
+      margin-bottom: 5px
+
+    ^&__info-panel
+      margin-top: 33px
+      margin-bottom: 5px
+
+    ^&__info-tip
+      line-height: 1
+
+  &__info
+
+    &-title
+      text: 300 24px
+
+    &-text
+      box: space-between
+
+      &-value
+        text: 500
+
+      &-mark
+        text: 700
+        display: inline
+        margin: * 5px
+
+    &-panel
+      box: wrap
+      align-items: baseline
+
+      > *:not(:last-child)
+        margin-right: 16px
+
+    &-link
+      text: #3371C0 700 14px
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+    &-small-text
+      text: #969696 12px 1.2
+
+      &-spacer
+        > *:not(:last-child)
+          margin-bottom: 12px
+
+    &-spacer
+      margin: 33px * 20px
+
+      > *:not(:last-child)
+        margin-bottom: 6px
+
+  &--where
+    ^&__info-title
+      margin-bottom: 6px
+
+    .card__label
+      left: auto
+      top: 20px
+      right: 20px
+
+  &--status-info
+    height: 100%
+
+    ^&__tip
+      margin-bottom: 15px
+
+    ^&__big-value
+      box: space-between
+      align-items: baseline
+      margin-bottom: 1px
+
+  &--top-space
+    margin-top: 20px

@@ -1,0 +1,17 @@
+.breadcrumbs
+  box: center
+  padding: 42px * 33px
+
+  &__item, &__link
+    text: #A0A0A0 12px 1
+    text-decoration: none
+
+  &__item:not(:last-child):after
+    content: ""
+    display: inline-block
+    margin: * 15px
+    size: 4px 7px
+    background: svg-load("icons/arrow.svg" fill: #A0A0A0)
+
+  &__link:hover
+    text-decoration: underline

@@ -1,0 +1,41 @@
+aside.all-shops__aside
+  form.all-shops__aside-search(action="#" method="get")
+    .input
+      input.input__elem.input__elem--line-style(placeholder="Найти магазин" name="search" autocomplete="off")
+      button.btn.btn--search
+
+  each i in [0, 1, 2]
+    ul.all-shops__aside-list
+      each item in allShopsAside[i]
+        li.all-shops__aside-item(class=[item.name === "Все магазины" ? "active" : ""])
+          a.all-shops__aside-link(href="#!" class="all-shops__aside-link--" + item.icon)= item.name
+
+  fieldset.all-shops__aside-group
+    legend.all-shops__aside-title Размер кэшбэка
+
+    .all-shops__aside-checkbox.input
+      input.input__checkbox(type="checkbox" name="cashback-percent" id="cashback-percent" checked)
+      label(for="cashback-percent").input__checkbox-label Кэшбэк в процентах %
+
+    .all-shops__aside-checkbox.input
+      input.input__checkbox(type="checkbox" name="cashback-rub" id="cashback-rub")
+      label(for="cashback-rub").input__checkbox-label Кэшбэк в рублях
+
+  fieldset.all-shops__aside-group
+    legend.all-shops__aside-title Доставка
+
+    .all-shops__aside-checkbox.input
+      input.input__checkbox(type="checkbox" name="cashback-ru" id="cashback-ru")
+      label(for="cashback-ru").input__checkbox-label Россия
+
+    .all-shops__aside-checkbox.input
+      input.input__checkbox(type="checkbox" name="cashback-kz" id="cashback-kz")
+      label(for="cashback-kz").input__checkbox-label Казахстан
+
+    .all-shops__aside-checkbox.input
+      input.input__checkbox(type="checkbox" name="cashback-by" id="cashback-by")
+      label(for="cashback-by").input__checkbox-label Беларусь
+
+    .all-shops__aside-checkbox.input
+      input.input__checkbox(type="checkbox" name="cashback-ua" id="cashback-ua" checked)
+      label(for="cashback-ua").input__checkbox-label Украина

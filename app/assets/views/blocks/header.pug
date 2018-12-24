@@ -1,21 +1,29 @@
-header.header
-  .header__container.container
-    a.header__logo(href="/")
+mixin header(account)
+  header.header
+    .header__container.container
+      a.header__logo(href="/")
 
-    form.header__search-form(action="/" method="get")
-      input.input__elem.header__search-input(placeholder="Найти магазин с кэшбэком" name="search" autocomplete="off")
-      button.header__search-btn
+      form.header__search-form(action="/" method="get")
+        input.input__elem.header__search-input(placeholder="Найти магазин с кэшбэком" name="search" autocomplete="off")
+        button.header__search-btn
 
-    nav.header__nav
-      a.header__nav-link(href="#!") Как это работает?
-      a.header__nav-link.active(href="#!") Магазины
-      a.header__nav-link(href="#!") FAQ
+      nav.header__nav
+        a.header__nav-link(href="#!") Как это работает?
+        a.header__nav-link.active(href="/all-shops.html") Магазины
+        a.header__nav-link(href="#!") FAQ
 
-    .header__account
-      button.header__account-signin.btn Войти
-      button.header__account-signup.btn Регистрация
+      .header__account
+        if account
+          .header__account-balance
+            .header__account-balance-mark 5 000 руб. 
+            | / 100 руб.
+          a.header__account-notification.header__account-notification--new(href="#!")
+          a.header__account-avatar(href="#!")
+        else
+          a.header__account-signin.btn(href="/profile.html") Войти
+          button.header__account-signup.btn Регистрация
 
-    .header__mobile-menu
-      .header__mobile-menu-line
-      .header__mobile-menu-line
-      .header__mobile-menu-line
+      .header__mobile-menu
+        .header__mobile-menu-line
+        .header__mobile-menu-line
+        .header__mobile-menu-line

@@ -1,0 +1,58 @@
+.profile
+
+  &__user
+    box: center
+    border-bottom: 1px solid #EAEAEA
+    margin-bottom: 29px
+    padding-bottom: 30px
+    margin-top: 3px
+
+    &-avatar
+      size: 70px
+      background: #EEEEEE svg-load("icons/user.svg" fill: #BEBEBE) no-repeat bottom center / 55px
+      border-radius: 50%
+      margin-right: 20px
+
+    &-name
+      text: 700
+
+    &-id
+      margin-top: 5px
+
+  &__nav
+
+    &-list
+
+    &-item
+
+      &:hover, &.active
+
+        ^^&-link
+          color: $main
+
+          @each $icon in user, wallet, cards, star-fill, refs, settings, help, exit
+            &--$icon:before
+              background-image: svg-load("icons/$icon.svg" fill: $main)
+
+      &.active
+        background: #FFEFE6
+
+    &-link
+      text: $dark
+      text-decoration: none
+      box: center
+      height: 50px
+      transition: .1s ease
+
+      &:before
+        content: ""
+        display: block
+        size: 20px
+        margin: * 14px * 16px
+        background-repeat: no-repeat
+        background-position: center
+        transition: .11s ease
+
+      @each $icon in user, wallet, cards, star-fill, refs, settings, help, exit
+        &--$icon:before
+          background-image: svg-load("icons/$icon.svg" fill: #DADADA)

@@ -1,0 +1,33 @@
+.pagination
+  box: center middle
+
+  &__link
+    size: 34px
+    border-radius: 50%
+    text: $dark 16px 1
+    text-decoration: none
+    box: center middle
+
+    &:not(:last-child)
+      margin-right: 19px
+
+    &--text
+      cursor: default
+
+    &--next, &--prev
+      &:before
+        content: ""
+        display: block
+        size: 5px 10px
+        background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+
+      &:hover, &.active
+        &:before
+          background: svg-load("icons/arrow-triangle.svg" fill: #fff)
+
+    &--prev:before
+      transform: rotate(180deg)
+
+    &:not(&--text):hover, &.active
+      background: $main
+      color: #fff

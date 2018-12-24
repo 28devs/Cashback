@@ -65,7 +65,7 @@
         border-color: $main
 
   &__account
-    box: horizontal right
+    box: horizontal right middle
     position: @lg-down absolute -999px null null null
 
     &-signin
@@ -74,6 +74,40 @@
     &-signin, &-signup
       display: flex
       width: 120px
+
+    &-balance
+      text: #a5a5a5
+      margin-right: 35px
+      cursor: default
+
+      &-mark
+        display: inline-block
+        text: $main
+        margin-right: 5px
+
+    &-notification
+      size: 21px 24px
+      background: svg-load("icons/notification.svg" fill: #CECECE)
+      margin-right: 32px
+      transition: .1s ease
+      position: relative
+
+      &:hover
+        background: svg-load("icons/notification.svg" fill: $main)
+
+      &--new
+        &:before
+          content: ""
+          display: block
+          size: 7px
+          background: #00C853
+          border-radius: 50%
+          position: absolute -2px -5px null null
+
+    &-avatar
+      size: 50px
+      background: #EEEEEE svg-load("icons/user.svg" fill: #BEBEBE) no-repeat bottom center / 38px
+      border-radius: 50%
 
   &__mobile-menu
     size: 26px 19px

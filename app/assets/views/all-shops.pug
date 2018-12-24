@@ -1,0 +1,20 @@
+extends layouts/layout.pug
+
+block title
+  title Все магазизины | Cashback
+
+block content
+  .container
+    +breadcrumbs("Все магазизины с кэшбэком")
+    +page-title("Все магазины с кэшбэком")
+
+    .container-with-aside
+      include blocks/all-shops-aside.pug
+
+      main.all-shops__main
+        .all-shops__main-list
+          each shop in shops
+            .all-shops__main-item
+              +shop-card(shop)
+
+        include blocks/pagination.pug

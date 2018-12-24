@@ -1,71 +1,251 @@
 -
   var shops = [
     {
-      logo: "https://dummyimage.com/143x33/efefef/c7c7c7",
+      logo: "img/shop-logos/1.jpg",
       percent: 5,
-      top: true
+      top: true,
+      isFavorite: true
     },
     {
-      logo: "https://dummyimage.com/140x24/efefef/c7c7c7",
+      logo: "img/shop-logos/2.jpg",
       percent: 4,
       top: true
     },
     {
-      logo: "https://dummyimage.com/140x57/efefef/c7c7c7",
+      logo: "img/shop-logos/3.jpg",
       percent: 5,
       top: true
     },
     {
-      logo: "https://dummyimage.com/140x57/efefef/c7c7c7",
+      logo: "img/shop-logos/4.jpg",
       percent: 3,
       boost: 1.5
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/5.jpg",
       percent: 4,
     },
-
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/6.jpg",
       percent: 1.75,
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/7.jpg",
       percent: 2.3,
       action: true
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/8.jpg",
       percent: 2,
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/9.jpg",
       percent: 5,
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/10.jpg",
       percent: 1.5,
     },
-
     {
-      logo: "https://dummyimage.com/100x60/efefef/c7c7c7",
+      logo: "img/shop-logos/11.jpg",
       percent: 3,
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/12.jpg",
       percent: 3,
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/13.jpg",
       percent: 2.2,
       action: true
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/14.jpg",
       percent: 2.5,
     },
     {
-      logo: "https://dummyimage.com/140x54/efefef/c7c7c7",
+      logo: "img/shop-logos/15.jpg",
       percent: 1.15,
     },
+  ]
+
+  var shopsFavorite = [
+    {
+      logo: "img/shop-logos/1.jpg",
+      percent: 5,
+      top: true,
+      isFavorite: true
+    },
+    {
+      logo: "img/shop-logos/2.jpg",
+      percent: 4,
+      isFavorite: true
+    },
+    {
+      logo: "img/shop-logos/3.jpg",
+      percent: 5,
+      isFavorite: true
+    },
+    {
+      logo: "img/shop-logos/4.jpg",
+      percent: 3,
+      boost: 1.5,
+      isFavorite: true
+    },
+    {
+      logo: "img/shop-logos/13.jpg",
+      percent: 2.2,
+      action: true,
+      isFavorite: true
+    },
+  ]
+
+  var allShopsAside = [
+    [
+      { 
+        name: "Все магазины",
+        icon: "shop"
+      },
+      {
+        name: "С повышенными кэшбэком (74)",
+        icon: "rocket"
+      },
+      {
+        name: "Новые магазины (143)",
+        icon: "new"
+      },
+      {
+        name: "Одежда и обувь (253)",
+        icon: "clothes"
+      },
+      {
+        name: "Красота и здоровье (115)",
+        icon: "heart"
+      }
+    ],
+    [
+      {
+        name: "Электроника и техника (171)",
+        icon: "camera"
+      },
+      {
+        name: "Путешествия (115) ",
+        icon: "bag"
+      },
+      {
+        name: "Дети (67)",
+        icon: "toy"
+      },
+      {
+        name: "Все для дома (227)",
+        icon: "home"
+      },
+      {
+        name: "Досуг и развлечения (159)",
+        icon: "ball"
+      },
+      {
+        name: "Доставка еды (41)",
+        icon: "eat"
+      },
+      {
+        name: "Услуги (114)",
+        icon: "services"
+      },
+    ],
+    [
+      {
+        name: "Страхование и финансы (37)",
+        icon: "dollar"
+      },
+      {
+        name: "Китайские магазины (79)",
+        icon: "earth"
+      },
+      {
+        name: "Иностранные магазины (199)",
+        icon: "earth"
+      },
+    ]
+  ]
+
+  var profileNav = [
+    {
+      name: "Мой кабинет",
+      url: "profile",
+      icon: "user"
+    },
+    {
+      name: "Мой кэшбэк и финансы",
+      url: "profile-finances",
+      icon: "wallet"
+    },
+    {
+      name: "Вывод средств",
+      url: "profile-withdrawal",
+      icon: "cards"
+    },
+    {
+      name: "Избранные магазины",
+      url: "profile-favorites",
+      icon: "star-fill"
+    },
+    {
+      name: "Реферальная программа",
+      url: "profile-refs",
+      icon: "refs"
+    },
+    {
+      name: "Настройки",
+      url: "profile-settings",
+      icon: "settings"
+    },
+    {
+      name: "Помощь",
+      url: "profile-help",
+      icon: "help"
+    },
+    {
+      name: "Выйти",
+      url: "#!",
+      icon: "exit"
+    },
+  ]
+
+  var withdrawalList = [
+    {
+      country: "ru",
+      img: "card",
+      text: "Банк. Карта Visa, МаsterCard (Россия)"
+    },
+    {
+      country: "ua",
+      img: "card",
+      text: "Банк. Карта Visa, МаsterCard (Украина)"
+    },
+    {
+      country: "kz",
+      img: "card",
+      text: "Банк. Карта Visa, МаsterCard (Казахстан)"
+    },
+    {
+      img: "mobile",
+      text: "Пополнение мобильного телефона"
+    },
+    {
+      img: "yandex",
+      text: "Яндекс Деньги"
+    },
+    {
+      img: "qiwi",
+      text: "Qiwi"
+    },
+    {
+      img: "webmoney",
+      text: "Webmoney"
+    },
+    {
+      img: "paypal",
+      text: "PayPal"
+    }
   ]

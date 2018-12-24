@@ -1,4 +1,5 @@
 .input
+  position: relative
 
   &__elem
     border: 1px solid #E0E0E0
@@ -20,6 +21,40 @@
 
     &:focus
       border-color: $main
+
+    &--line-style
+      border-radius: 0
+      padding-left: 0
+      border-width: 0 0 1px 0
+
+  &__checkbox
+    display: none
+
+    &-label
+      box: center
+      cursor: pointer
+      user-select: none
+
+      &:before
+        content: ""
+        display: block
+        size: 20px
+        background: #EEEEEE
+        margin-right: 12px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: 12px
+        transition: .2s ease
+
+      &:hover:before
+        background-image: svg-load("icons/check.svg" fill: #ababab)
+
+    &:checked
+      + ^&-label:before
+        background-image: svg-load("icons/check.svg" fill: #fff)
+        background-color: $main
+
+
 
   &--error
     ^&__elem

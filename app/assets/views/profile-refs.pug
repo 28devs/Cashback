@@ -1,0 +1,61 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Реферальная программа| Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Реферальная программа")
+
+      main.profile__main
+        +page-title("Реферальная программа", "Количество приведенных другей 0")
+
+        .refs__panel
+          .refs__col
+            .card
+              .card__circle-label.card__circle-label--small.card__circle-label--refs
+              .card__content
+                .card__tip Друзей
+                .card__big-value 0
+
+          .refs__col
+            .card
+              .card__circle-label.card__circle-label--small.card__circle-label--currency
+              .card__content
+                .card__tip Доход от друзей
+                .card__big-value 10000
+                  .card__big-value-currency ₽
+
+          .refs__col
+            .card
+              .card__circle-label.card__circle-label--small.card__circle-label--cart
+              .card__content
+                .card__tip Заказов от друзей
+                .card__big-value 0
+
+          .refs__col
+            .card
+              .card__circle-label.card__circle-label--small.card__circle-label--wait
+              .card__content
+                .card__tip Доход в от друзей в ожидании
+                .card__big-value 0
+
+        .refs__link
+          .refs__link-text Ссылка для друга
+          .refs__link-input
+            input.input__elem(type="text" value="http://servicename.com/?ru=1622945")
+            button.btn.btn--copy
+
+        .refs__link
+          .refs__link-text Поделитесь в социальных сетях
+          .refs__link-input
+            .social
+              each item in ["facebook", "vk", "odnoklassniki", "twitter"]
+                a.social__link.social__link--small.social__link--color(href="#!" class="social__link--" + item)

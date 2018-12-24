@@ -1,0 +1,69 @@
+.all-shops
+
+  &__aside
+
+    &-search
+      margin-bottom: 9px
+
+    &-list
+      padding: 17px *
+      border-bottom: 1px solid #E0E0E0
+
+    &-item
+
+      &:hover, &.active
+        ^^&-link
+          text-decoration: none
+          color: $main
+
+          @each $icon in shop, rocket, new, clothes, heart, camera, bag, toy, home, ball, eat, services, dollar, earth
+            &--$icon:before
+              background-image: svg-load("icons/$icon.svg" fill: $main)
+
+      &.active
+        ^^&-link
+          text-decoration: underline
+
+    &-link
+      text: $dark 12px
+      text-decoration: none
+      padding: 10px *
+      box: center
+      transition: .1s ease
+
+      &:before
+        content: ""
+        display: block
+        size: 20px
+        margin-right: 8px
+        background-repeat: no-repeat
+        background-position: center
+        transition: .11s ease
+
+      @each $icon in shop, rocket, new, clothes, heart, camera, bag, toy, home, ball, eat, services, dollar, earth
+        &--$icon:before
+          background-image: svg-load("icons/$icon.svg" fill: #CECECE)
+
+      &:hover
+        text-decoration: underline
+
+    &-group
+      margin: 24px * 42px
+
+    &-title
+      text: 500
+      margin-bottom: 15px
+
+    &-checkbox:not(:last-child)
+      margin-bottom: 21px
+
+  &__main
+
+    &-list
+      box: wrap
+      margin-bottom: 30px @md 40px @lg 58px
+      margin: -5px @xs -10px
+
+    &-item
+      width: calc(50% - 5px) @xs calc(50% - 10px) @sm calc(100% - 20px) @md calc(25% - 20px) @lg calc(25% - 20px)
+      margin: 5px @xs 10px

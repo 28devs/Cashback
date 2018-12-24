@@ -1,0 +1,162 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Личный кабинет | Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Мой кабинет")
+
+      main.profile__main
+        +page-title("Личный кабинет")
+
+        .profile__row
+          .profile__col
+            .card.card--balance
+              .card__circle-label.card__circle-label--currency
+              .card__content
+                .card__tip На балансе:
+                .card__large-value 1 200
+                  .card__large-value-currency ₽
+                a.btn.btn--outline.btn--small(href="/profile-withdrawal.html") Вывести средства
+
+          .profile__col
+            .card.card--balance
+              .card__circle-label.card__circle-label--wait
+              .card__content
+                .card__tip Ожидает начисления:
+                .card__large-value.card__large-value--gray 0
+                  .card__large-value-currency ₽
+                a.btn.btn--outline.btn--small(href="/profile-finances.html") Заказы и финансы
+
+
+        .card.card--status
+          .card__content
+            .profile__status
+              .card__tip Статус
+              .card__big-value Железо
+                a.card__read-more(href="#!") Подробнее
+
+              .profile__progress.profile__progress--is-iron
+                .profile__progress-row
+                  .profile__progress-col
+                  .profile__progress-col
+                    .profile__progress-percent.profile__progress-percent--bronze +10%
+                  .profile__progress-col
+                    .profile__progress-percent.profile__progress-percent--silver +20%
+                  .profile__progress-col
+                    .profile__progress-percent.profile__progress-percent--gold +30%
+
+                .profile__progress-row
+                  .profile__progress-col
+                    .profile__progress-icon.profile__progress-icon--iron
+                  .profile__progress-col
+                    .profile__progress-icon.profile__progress-icon--bronze
+                  .profile__progress-col
+                    .profile__progress-icon.profile__progress-icon--silver
+                  .profile__progress-col
+                    .profile__progress-icon.profile__progress-icon--gold
+
+                .profile__progress-row
+                  .profile__progress-col
+                    .profile__progress-name Железо
+                  .profile__progress-col
+                    .profile__progress-name Бронза
+                  .profile__progress-col
+                    .profile__progress-name Серебро
+                  .profile__progress-col
+                    .profile__progress-name Золото
+
+                .profile__progress-line
+                  .profile__progress-line-circle
+                  .profile__progress-line-circle
+                  .profile__progress-line-circle
+                  .profile__progress-line-circle
+
+                .profile__progress-row
+                  .profile__progress-col
+                  .profile__progress-col
+                    .profile__progress-value 12 000 руб.
+                  .profile__progress-col
+                    .profile__progress-value 24 000 руб.
+                  .profile__progress-col
+                    .profile__progress-value 48 000 руб.
+
+            .profile__info
+              .card__tip До статуса Bronze осталось:
+                .card__tip-value 10 000 руб.
+              .card__tip Нокоплено за все время:
+                .card__tip-value 10 000 руб.
+
+              .profile__premium
+                .profile__premium-icon
+
+                .profile__premium-info
+                  .profile__premium-title Премиум
+                    .profile__premium-value +30%
+
+                  .profile__premium-text Подключить за 4500руб./мес
+
+                  a.btn.btn--outline.btn--small(href="/profile-finances.html") Подключить
+
+
+        .card.card--email
+          .card__content
+            .profile__email-icon
+
+            .profile__email-content
+              .card__info-title Подтвердите свой Email для активации аккаунта
+              .card__info-text Мы отправили вам письмо на 
+                .card__info-text-mark graphic.ivchenko@gmail.com
+                | со ссылкой активации.
+
+              .card__info-panel
+                a.btn.btn--outline.btn--small(href="#!") Проверить Email
+                a.card__info-link(href="#!") Отправить письмо повторно
+                .card__info-tip или
+                a.card__info-link(href="#!") изменить email
+
+
+        .profile__row
+          .profile__col
+            .card.card--where
+              .card__label.card__label--red Важно
+              .card__content
+                .card__info-title Где моя выплата?
+
+                .card__info-small-text-spacer
+                  .card__info-small-text Выплаты проиходят каждую среду автоматически.
+                  .card__info-small-text Достаточно до дня выплат указать реквизиты.
+                  .card__info-small-text Минимальная сумма для выплат:
+
+                .card__info-spacer
+                  .card__info-text Телефон
+                    .card__info-text-value 15
+                  .card__info-text Webmoney
+                    .card__info-text-value 15
+                  .card__info-text Банковская карта
+                    .card__info-text-value 500
+                  .card__info-text QIWI
+                    .card__info-text-value 100
+
+                .card__info-small-text Зачисление на банковскую карту может занимать 3-6 банковских дней
+
+          .profile__col
+            .card.card--status-info
+              .card__content
+                .card__tip Статус
+                .card__big-value Премиум (+30%)
+                  a.card__read-more(href="#!") Подробнее
+                .card__tip Действует до 09.11.2018
+
+                .profile__status-icon-wrapper
+                  .profile__status-icon
+                  .profile__status-text Подключено
+

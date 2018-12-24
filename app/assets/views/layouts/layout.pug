@@ -1,5 +1,6 @@
 include ../inc/var.pug
 include ../inc/mixins.pug
+include ../blocks/header.pug
 doctype html
 html(lang="ru" dir="ltr")
   head
@@ -13,7 +14,8 @@ html(lang="ru" dir="ltr")
     link(href="styles/main.css" rel="stylesheet")
 
   body
-    include ../blocks/header.pug
+    block header
+      +header
 
     block content
 

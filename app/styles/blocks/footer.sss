@@ -85,7 +85,7 @@
 
       @each $icon in visa, mastercard, yandex-money, mobile-pay, qiwi, paypal, webmoney
         &--$icon:after
-          background: svg-load("icons/$icon.svg") no-repeat center / contain
+          background: svg-load("icons/$icon.svg" fill: #fff) no-repeat center / contain
 
   &__bottom
     border-top: 1px solid rgba(255, 255, 255, 0.1)

@@ -1,0 +1,204 @@
+.profile
+
+  &__row
+    box: wrap
+    margin: -10px
+
+  &__col
+    width: 100% @md calc(50% - 20px)
+    margin: 10px
+
+  &__status
+    width: 67%
+    margin-right: 40px
+    padding-right: 40px
+    border-right: 1px solid #EAEAEA
+
+  &__info
+    width: 40%
+
+  &__premium
+    box: left
+    margin-top: 73px
+
+    &-icon
+      size: 60px 58px
+      margin-right: 25px
+      margin-top: -20px
+      background: resolve("icons/color-gold.svg")
+
+    &-title
+      text: 700 14px
+      margin-bottom: 4px
+
+    &-value
+      display: inline-block
+      text: 300 #F9A825
+      margin-left: 6px
+
+    &-text
+      text: 14px
+      margin-bottom: 21px
+
+  &__progress
+    margin-top: 19px
+    margin-bottom: 7px
+
+    &-row
+      box: space-between
+
+    &-col
+      width: 73px
+      box: middle
+
+      &:first-child, &:last-child
+        width: 48px
+
+    &-percent
+      text: 500 14px
+      margin-bottom: 5px
+
+      &--bronze
+        color: #D84315
+
+      &--silver
+        color: #546E7A
+
+      &--gold
+        color: #F9A825
+
+    &-icon
+      size: 43px 42px
+      margin-bottom: 15px
+
+      @each $i in iron, bronze, silver, gold
+        &--$i
+          background: resolve("icons/status-$i.svg")
+
+    &-name
+      text: #AFAFAF 14px
+      margin-bottom: 10px
+
+    &-line
+      height: 4px
+      max-width: 413px
+      background: #F5F5F5
+      margin-bottom: 14px
+      margin: * auto
+      box: space-between
+      position: relative
+
+      &-circle
+
+        &:before, &:after
+          content: ""
+          display: block
+
+        &:before
+          size: 14px
+          margin-top: -5px
+          border-radius: 50%
+          background: #F5F5F5
+          position: relative
+          z-index: 5
+
+        &:after
+          content: ""
+          display: block
+          size: 33% 4px
+          position: absolute 0 null 0 0
+          z-index: 1
+          opacity: .3
+
+        &:nth-child(2):after
+          margin-left: 33%
+
+        &:nth-child(3):after
+          margin-left: 66%
+
+    &-value
+      text: #AFAFAF 14px
+      white-space: nowrap
+
+    &--is-iron
+      ^&-col
+        &:nth-child(1) ^^&-name
+          color: $dark
+
+      ^&-line-circle
+        &:nth-child(1)
+          &:before
+            background: #757575
+
+    &--is-bronze
+      @extend .profile__progress--is-iron
+
+      ^&-col
+        &:nth-child(2) ^^&-name
+          text: #D84315
+        &:nth-child(2) ^^&-value
+          text: 500 #D84315
+
+      ^&-line-circle
+        &:nth-child(2)
+          &:before
+            background: #ff8d69
+        &:nth-child(1)
+          &:after
+            background: linear-gradient(90deg, #757575, #ff8d69)
+
+    &--is-silver
+      @extend .profile__progress--is-iron
+      @extend .profile__progress--is-bronze
+
+      ^&-col
+        &:nth-child(3) ^^&-name
+          text: #546E7A
+        &:nth-child(3) ^^&-value
+          text: 500 #546E7A
+
+      ^&-line-circle
+        &:nth-child(3)
+          &:before
+            background: #b0bec5
+        &:nth-child(2)
+          &:after
+            background: linear-gradient(90deg, #ff8d69, #b0bec5)
+
+    &--is-gold
+      @extend .profile__progress--is-iron
+      @extend .profile__progress--is-bronze
+      @extend .profile__progress--is-silver
+
+      ^&-col
+        &:nth-child(4) ^^&-name
+          text: #F9A825
+        &:nth-child(4) ^^&-value
+          text: 500 #F9A825
+
+      ^&-line-circle
+        &:nth-child(4)
+          &:before
+            background: #ffd54f
+        &:nth-child(3)
+          &:after
+            background: linear-gradient(90deg, #b0bec5, #ffd54f)
+
+  &__email-icon
+    size: 70px
+    margin-right: 40px
+    background: resolve("icons/color-letter.svg")
+
+  &__status
+
+    &-icon
+      size: 103px 98px
+      margin-bottom: 22px
+      background: resolve("icons/color-gold.svg") no-repeat center / contain
+
+      &-wrapper
+        box: vertical center
+        margin-top: 30px
+
+    &-text
+      text: 700

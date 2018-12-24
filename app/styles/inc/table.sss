@@ -1,0 +1,139 @@
+.table
+
+  &__head, &__row
+    box: space-between
+
+  &__head
+    border-bottom: 1px solid #EAEAEA
+    text: #AFAFAF
+    height: 40px
+    padding: 10px 40px
+
+  &__row
+    margin: * 40px * 35px
+    padding: 32px * 33px
+
+    &:not(:last-child)
+      border-bottom: 1px solid #EAEAEA
+
+  &__time
+    box:
+
+    &-minute
+      display: inline-block
+      margin-left: 18px
+
+  &__desc
+    box: left
+
+    &:not(:last-child)
+      margin-bottom: 6px
+
+    &-key
+      min-width: 128px
+
+    &-value
+      min-width: 100px
+
+      &--shop
+        text: $main 700
+
+      &--order
+        text: 700
+
+  &__price
+    text: $main 700
+
+  &__status
+    text: $main 700
+    box: center
+    cursor: default
+    float: right
+    position: relative
+
+    &:after
+      content: ""
+      size: 16px
+      display: block
+      margin-left: 8px
+      background: svg-load("icons/question.svg" fill: $main)
+
+    &--rejected
+      color: #B3B3B3
+
+      &:after
+        background: svg-load("icons/question.svg" fill: #DADADA)
+
+    &--approved
+      color: #1EBD36
+
+      &:after
+        background: svg-load("icons/question.svg" fill: #1EBD36)
+
+    &-popup
+      position: absolute 38px -20px null null
+      background: #242333
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+      text: #fff 300 12px 1.2
+      border-radius: 4px
+      min-width: 330px
+      overflow: hidden
+      opacity: 0
+      transform: translateY(9px)
+      transition: .2s ease
+      cursor: default
+      max-height: 0
+
+      &-text
+        padding: 17px 23px
+        opacity: 0
+        transform: translateY(4px)
+        transition: .25s ease
+
+      &:after
+        content: ""
+        display: block
+        background: transparent
+        height: 30px
+        position: absolute -30px 0 null 50%
+
+      &:before
+        content: ""
+        display: block
+        position: absolute -5px 21px null null
+        size: 0
+        border-style: solid
+        border-width: 0 7px 5px 7px
+        border-color: transparent transparent #242333 transparent
+        transform: translateY(15px)
+        transition: .22s ease
+
+      &-mark
+        text: #1EBD36 500
+        display: inline-block
+
+    &:hover
+      ^&-popup
+        overflow: visible
+        opacity: 1
+        transform: translateY(0)
+        max-height: 999px
+
+        &:before
+          transform: translateY(0)
+
+        &-text
+          overflow: visible
+          opacity: 1
+          transform: translateY(0)
+
+  &--finances
+    ^&__col
+      &:nth-child(1)
+        width: 150px
+      &:nth-child(2)
+        width: 266px
+      &:nth-child(3)
+        width: 143px
+      &:nth-child(4)
+        width: 120px

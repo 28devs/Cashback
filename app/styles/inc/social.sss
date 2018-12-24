@@ -9,7 +9,7 @@
     background-position: center
     transition: .1s ease
 
-    @each $icon in facebook, instagram, telegram, vk, twitter
+    @each $icon in facebook, instagram, telegram, vk, twitter, odnoklassniki
       &--$icon
         background-image: svg-load("icons/$icon.svg")
 
@@ -21,3 +21,25 @@
 
     &:active
       background-color: #0c0c0c
+
+    &--small
+      size: 35px @lg 40px
+
+      &:not(:last-child)
+        margin-right: 16px @lg 20px
+
+    &--color
+      &^&--facebook
+        background-color: #3A5999
+
+      &^&--vk
+        background-color: #4C6D91
+
+      &^&--odnoklassniki
+        background-color: #F58634
+
+      &^&--twitter
+        background-color: #55ACED
+
+      &:hover
+        filter: brightness(1.1)

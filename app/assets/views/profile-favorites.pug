@@ -1,0 +1,23 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Избранные магазины | Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Избранные магазины")
+
+      main.profile__main
+        +page-title("Избранные магазины")
+
+        .all-shops__main-list
+          each shop in shopsFavorite
+            .all-shops__main-item
+              +shop-card(shop)
