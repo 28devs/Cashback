@@ -1,8 +1,45 @@
 .input
   position: relative
 
+  &--select-plain
+    box: center
+
+    &:after
+      content: ""
+      display: block
+      size: 5px 10px
+      transform: rotate(90deg)
+      background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+      margin-left: 8px
+
+  &--select
+
+    &:after
+      content: ""
+      display: block
+      position: absolute null 23px 16px null
+      size: 5px 10px
+      transform: rotate(90deg)
+      background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+      margin-left: 8px
+
+  &--material
+    ^&__elem
+      padding: * 0
+      border-radius: 0
+      border: 0
+      border-bottom: 1px solid #E0E0E0
+      text: 100 20px
+
+      &::placeholder
+        text: #C5C5C5
+
+      &:focus
+        border-width: 2px
+
   &__elem
     border: 1px solid #E0E0E0
+    background: #fff
     border-color: #E0E0E0
     border-radius: 4px
     padding: * 17px
@@ -11,7 +48,7 @@
     text: $dark 300 16px
     font-family: $font
     width: 100%
-    transition: .1s ease
+    transition: color .1s ease, border-color .1s ease
 
     &::placeholder
       text: #757575
@@ -26,6 +63,99 @@
       border-radius: 0
       padding-left: 0
       border-width: 0 0 1px 0
+
+    &:disabled
+      background: #F5F5F5
+      border-color: #EEEEEE
+      color: #757575
+
+  &__textarea
+    @extend .input__elem
+    resize: none
+    padding: 9px *
+    height: 130px
+
+  &__file
+    @extend .input__elem
+    cursor: pointer
+    box: center middle
+
+    &:before
+      content: ""
+      display: block
+      size: 20px 21px
+      margin-right: 10px
+      background: svg-load("icons/file.svg")
+
+    &-mark
+      color: $main
+      margin-right: 5px
+
+    &-elem
+      position: absolute 0 0 0 0
+      display: block
+      width: 100%
+      opacity: 0
+      cursor: pointer
+
+  &__label
+    text: 14px
+    display: block
+    margin-bottom: 5px
+
+    &--required:after
+      content: "*"
+      display: inline-block
+      text: $main
+
+  &__sufix
+    position: absolute null 0 20px null
+    padding-left: 12px
+    transform: translate(100%, 50%)
+
+    &-link
+      text: $main 600 14px
+      text-decoration: none
+      margin-left: 16px
+
+      &:hover
+        text-decoration: underline
+
+    &-tip
+      text: 14px
+      margin-left: 16px
+      margin-bottom: -1px
+
+  &__inner-sufix
+    position: absolute null 0 20px null
+    transform: translate(0, 50%)
+
+    &-link
+      text: $main 700 16px
+      text-decoration: none
+
+      &:hover
+        opacity: .8
+
+  &__select-plain
+    border: 0
+    text: $dark 700 16px
+    display: block
+    outline: 0
+    cursor: pointer
+    background: transparent
+    -webkit-appearance: none
+
+  &__select
+    @extend .input__elem
+    -webkit-appearance: none
+    cursor: pointer
+
+    option
+      text: $dark 300 16px
+
+    &:hover + ::after
+      display: none
 
   &__checkbox
     display: none
@@ -44,7 +174,7 @@
         background-repeat: no-repeat
         background-position: center
         background-size: 12px
-        transition: .2s ease
+        transition: background .2s ease
 
       &:hover:before
         background-image: svg-load("icons/check.svg" fill: #ababab)
@@ -53,8 +183,6 @@
       + ^&-label:before
         background-image: svg-load("icons/check.svg" fill: #fff)
         background-color: $main
-
-
 
   &--error
     ^&__elem

@@ -1,0 +1,76 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Настройки | Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Настройки")
+
+      main.profile__main
+        +page-title("Настройки")
+
+        .card
+          .card__content
+            .card__title Настройка профиля
+
+            .card__profile
+              .card__profile-name Номер клиента
+              .card__profile-value 7110559
+
+            .card__profile
+              .card__profile-name Электронна почта
+              .card__profile-value graphic.ivchenko@gmail.com
+              a.card__profile-link(href="#!") Изменить
+
+            .card__profile
+              .card__profile-name Имя и фамилия на сайте
+              .card__profile-value Александр Ивченко
+              a.card__profile-link(href="#!") Изменить
+
+
+        .card.card--top-space
+          .card__content
+            .card__title Защитите свой аккаунт при помощи номера телефона
+
+            .card__text Это повысит безопасность данных и ускорит вывод средств. На указанный номер мы отправим <b>бесплатное</b> СМС-сообщение с кодом подтверждения.
+
+            form.card__form(action="#" method="get")
+              .input
+                label.input__label(for="phone") Номер телефона
+                input.input__elem(type="text" name="phone" id="phone" placeholder="Введите номер телефона" value="+7")
+
+              button.btn.btn--wide Получить код
+
+
+        .card.card--top-space
+          .card__content
+            .card__title Пароль
+              a.card__title-link(href="#!") Изменить
+
+            .card__text Убедитесь, что выбрали недёжный пароль. <b>Надежный пароль содержит, цифры и символы.</b> Он не должен легко угадывать или быть похожим на существующее слово.
+
+
+        .card.card--top-space
+          .card__content
+            .card__title Привязка соцсети для входа в аккаунт
+
+            .card__text Привязка социальные сети, чтобы <b>входить в аккаунт в 1 клик.</b>
+
+            .social-login
+              .social-login__item.social-login__item--facebook.social-login__item--active
+                .social-login__item-info Facebook привян
+                  a.social-login__link(href="#!") Отвязать
+
+              a.social-login__item.social-login__item--vk(href="#!")
+                .social-login__item-info Привязать ВКонтакте
+
+              a.social-login__item.social-login__item--google-plus(href="#!")
+                .social-login__item-info Привязать Google +

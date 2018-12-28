@@ -1,0 +1,53 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Вывод средств | Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Вывод средств")
+
+      main.profile__main
+        +page-title("Вывод средств")
+
+        .card
+          .card__content
+            a.withdrawal__form-back(href="/profile-withdrawal.html") Изменить способ вывода
+
+            .withdrawal__form-header
+              .withdrawal__form-header-info
+                .withdrawal__form-header-text <b>Способ вывода:</b> Банк, карта Visa, MasterCard (Россия)
+                .withdrawal__form-header-tip При выводе на банковскую карту используйте только российские карты Visa и MasterCard с <b>валютой российский рубль</b>, иначе платеж вернется обратно.
+
+              .withdrawal__form-header-logo.withdrawal__img.withdrawal__img--single.withdrawal__img--card
+
+            form.withdrawal__form(action="#" method="get")
+              .input
+                label.input__label(for="card") Номер карты 16 цифр
+                input.input__elem(type="text" name="card" id="card" placeholder="Например: 4024 0071 9024 5513")
+
+              .input
+                label.input__label(for="name") Имя
+                input.input__elem(type="text" name="name" id="name" placeholder="Введите имя")
+
+              .input
+                label.input__label(for="surname") Фамилия
+                input.input__elem(type="text" name="surname" id="surname" placeholder="Введите фамилию")
+
+              .withdrawal__form-select-amount Укажите сумму вывода:
+
+              .input
+                label.input__label(for="amount") Сумма в рублях
+                input.input__elem(type="text" name="amount" id="amount" placeholder="0.00")
+                .input__sufix руб.
+
+              .withdrawal__form-block-info Минимальная сумма вывода составляет <b>500 руб.</b><br>Для вывода суммы <b>более 15000 руб.</b> — обратитесь в <a href="#!">службу поддержки.</a>
+
+              .btn.btn--wide Вывести средства

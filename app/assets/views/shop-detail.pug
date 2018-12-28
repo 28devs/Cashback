@@ -1,0 +1,40 @@
+extends layouts/layout.pug
+
+block title
+  title Магазин Rozetka | Cashback
+
+block content
+  .container
+    +breadcrumbs("Rozetka", "Магазины")
+
+    .container-with-aside
+      aside.shop-detail__aside
+        +shop-card-detail(shops[1])
+
+      main.shop-detail__main
+        +page-title("Покупки в Rozetka с кэшбэком в Украине")
+
+        .shop-detail__info
+          h3.shop-detail__title.shop-detail__title--icon-hourglass Время начисления кэшбэка
+          p Среднее время ожидания кэшбэка: 10 дней<br>Максимальное время ожидания кэшбэка: 25 дней
+
+          h3.shop-detail__title.shop-detail__title--icon-global Доступен для пользователей из Укранины
+          p Кэшбэк в магазине Rozetka доступен пользователям из Укранины (кроме Луганской, Донецкой областей и АР Крым).
+
+          h3.shop-detail__title.shop-detail__title--icon-info Начисление кэшбэка
+          p Важно! Ставка кэшбэка может меняться от 0,3% до 4% зависимо от категории товара.<br> Ознакомиться с актуальными ставками на разные категории товаров можно в таблице выше.<br> Для успешного начисления кэшбэка по заказам в магазине Rozetka, отключайте, пожалуйста, блокировщики рекламы.
+
+          p Если вы хотите внести изменения в ваш заказ на Rozetka UA и сохранить при этом кэшбэк, вам нужно отменить первоначальный заказ через колл-центр или онлайн поддержку сайта, затем заново оформить правильный заказ через кэшбэк-сервис.
+
+          p По условиям магазина Rozetka, если кэшбэк не был начислен, нужно обратиться в Службу заботы о клиентах в течение 30 рабочих дней после фактической покупки.
+
+        .shop-detail__similar-shops.similar-shops
+          .similar-shops__title Похожие магазины
+
+          .similar-shops__list
+            each i in [3,4,5,6]
+              .similar-shops__item
+                +shop-card(shops[i])
+
+        include blocks/reviews.pug
+        include blocks/pagination.pug

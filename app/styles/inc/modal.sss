@@ -1,0 +1,133 @@
+.modal
+  background: #FFF
+  box-shadow: 0 10px 40px rgba(14, 23, 32, 0.07)
+  position: relative
+  max-height: calc(100vh - 40px)
+  overflow: auto
+  transform: translateY(-14px)
+  transition: transform .15s ease
+
+  &__wrapper
+    box: center middle
+    position: absolute 0 0 0 0
+
+  &__cover
+    background: rgba(0, 0, 0, .15)
+    position: fixed 0 0 0 0
+    z-index: 999
+    visibility: hidden
+    pointer-events: none
+    opacity: 0
+    transition: opacity .15s ease
+
+    &:not(.load)
+      display: none
+
+    &.show
+      visibility: visible
+      pointer-events: auto
+      opacity: 1
+
+      .modal
+        transform: translateY(0)
+
+  &__close
+    size: 22px
+    position: absolute 20px 20px null null
+    background: svg-load("icons/cross.svg" fill: $dark) no-repeat center / 18px
+    opacity: .3
+    cursor: pointer
+    border: 0
+    transition: opacity .15s ease
+    padding: 0
+    outline: 0
+
+    &:hover
+      opacity: .5
+
+  &__success
+    padding: 80px 111px 70px
+
+    &-icon
+      size: 120px
+      border-radius: 50%
+      background: svg-load("icons/color-success.svg") no-repeat center / contain
+      margin: 0 auto 30px
+
+    &-text
+      text: 35px
+
+  &__how-it-works
+    padding: 67px 63px 101px
+
+    &-title
+      text: 35px center
+      margin-bottom: 80px
+
+    &-list
+      box: space-between
+
+    &-item
+      max-width: 280px
+
+      &:not(:last-child)
+        margin-right: 40px
+
+    &-img
+      size: 100% 80px
+      margin-bottom: 35px
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+
+      &--1
+        background-image: svg-load("icons/color-icon-1.svg")
+
+      &--2
+        background-image: svg-load("icons/color-icon-2.svg")
+
+      &--3
+        background-image: svg-load("icons/color-icon-3.svg")
+
+    &-name
+      text: 700 20px center
+      margin-bottom: 8px
+
+    &-text
+      text: 16px 1.6 center
+
+  &__auth
+    padding: 38px 40px 45px
+    width: 400px
+
+    &-title
+      text: 500 20px
+      margin-bottom: 30px
+
+    .input
+      margin-bottom: 38px
+
+    .btn
+      margin-bottom: 36px
+
+    &-social
+      margin-bottom: 46px
+
+      &-title
+        text: 500 center
+        margin-bottom: 15px
+
+      &-list
+        box: center middle
+
+    &-link
+      text: $main 700 16px center
+      display: block
+      text-decoration: none
+
+      &:hover
+        opacity: .8
+
+      + ^&-social
+        margin-top: 40px
+        margin-bottom: 0

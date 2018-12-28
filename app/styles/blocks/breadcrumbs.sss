@@ -6,7 +6,10 @@
     text: #A0A0A0 12px 1
     text-decoration: none
 
-  &__item:not(:last-child):after
+  &__item
+    cursor: default
+
+  &__item:not(:last-of-type):after
     content: ""
     display: inline-block
     margin: * 15px
@@ -15,3 +18,16 @@
 
   &__link:hover
     text-decoration: underline
+
+  &__panel
+    margin-left: auto
+
+    &-link
+      text: $dark 500
+      text-decoration: none
+
+      &:not(:last-child)
+        margin-right: 55px
+
+      &:hover
+        text-decoration: underline

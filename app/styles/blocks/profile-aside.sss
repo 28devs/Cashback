@@ -24,8 +24,9 @@
     &-list
 
     &-item
+      position: relative
 
-      &:hover, &.active
+      &:hover, &.active, &.active-sub
 
         ^^&-link
           color: $main
@@ -33,6 +34,14 @@
           @each $icon in user, wallet, cards, star-fill, refs, settings, help, exit
             &--$icon:before
               background-image: svg-load("icons/$icon.svg" fill: $main)
+
+        ^^&-sub-link
+          max-height: 50px
+          opacity: 1
+
+        ^^&-sub-list:before
+          background: svg-load("icons/arrow-triangle.svg" fill: $main)
+          transform: rotate(-90deg)
 
       &.active
         background: #FFEFE6
@@ -42,7 +51,7 @@
       text-decoration: none
       box: center
       height: 50px
-      transition: .1s ease
+      transition: color .1s ease
 
       &:before
         content: ""
@@ -51,8 +60,34 @@
         margin: * 14px * 16px
         background-repeat: no-repeat
         background-position: center
-        transition: .11s ease
+        transition: background .11s ease
 
       @each $icon in user, wallet, cards, star-fill, refs, settings, help, exit
         &--$icon:before
           background-image: svg-load("icons/$icon.svg" fill: #DADADA)
+
+    &-sub-list
+      background: #fff
+
+      &.active
+        background: #FFEFE6
+
+        ^^&-sub-link
+          color: $main
+
+      &:before
+        content: ""
+        display: block
+        position: absolute 22px 24px null null
+        size: 5px 10px
+        background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+        transform: rotate(90deg)
+
+    &-sub-link
+      @extend .profile__nav-link
+      max-height: 0
+      opacity: 0
+      overflow: hidden
+
+      &:hover
+        color: $main

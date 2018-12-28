@@ -1,0 +1,40 @@
+.shop-detail
+
+  &__title
+    @extend .h3
+    margin-bottom: 13px
+    box: center
+
+    &:not(:first-child)
+      margin-top: 50px
+
+    &:before
+      content: ""
+      display: inline-block
+      size: 24px
+      background-position: center
+      background-repeat: no-repeat
+      background-size: contain
+      margin-right: 18px
+
+    &--icon-hourglass:before
+      background-image: svg-load("icons/hourglass.svg" fill: #DADADA)
+
+    &--icon-global:before
+      background-image: svg-load("icons/global.svg" fill: #DADADA)
+
+    &--icon-info:before
+      background-image: svg-load("icons/info.svg" fill: #DADADA)
+
+  &__info
+    margin-bottom: 54px
+    padding-top: 18px
+
+    p
+      padding-left: 42px
+
+      &:not(:last-child)
+        margin-bottom: 29px
+
+  &__similar-shops
+    margin-bottom: 66px

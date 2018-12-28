@@ -1,0 +1,32 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Мои обращения | Cashback
+
+block content
+  .container
+    .breadcrumbs
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") cashbackservice.com
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Личный кабинет
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Помощь
+      .breadcrumbs__item Мои обращения
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Мои обращения")
+
+      main.profile__main
+        .ticket__header
+          .ticket__header-info
+            h2.ticket__title Мои обращения
+              .ticket__title-tip (клиентский номер: 7165177)
+
+            .ticket__text У Вас пока нет обращений. Чтобы начать беседу с менеджером, отправьте сообщение
+
+          a.ticket__create-btn.btn.btn--outline-color.btn--big(href="/profile-ticket-create.html") Создать обращение

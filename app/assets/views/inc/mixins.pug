@@ -1,9 +1,16 @@
-mixin breadcrumbs(name)
+mixin breadcrumbs(name, name2)
   .breadcrumbs
     .breadcrumbs__item
       a.breadcrumbs__link(href="#!") cashbackservice.com
 
-    .breadcrumbs__item= name
+    if name2
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!")= name2
+
+      .breadcrumbs__item= name
+
+    else
+      .breadcrumbs__item= name
 
 
 mixin page-title(title, tip)
@@ -41,6 +48,44 @@ mixin shop-card(shop)
       a.btn.btn--wide(href="#!") Активировать
 
 
+mixin shop-card-detail(shop)
+  .card.card--shop-detail(class=[ shop.isFavorite && "card--is-favorite" ])
+    if shop.top
+      .card__label ТОП
+
+    if shop.boost
+      .card__label.card__label--green Кэшбэк 2x
+
+    if shop.action
+      .card__label.card__label--red Акция
+
+    button.card__add-to-favorite
+
+    .card__logo-wrapper
+      img.card__logo-img(src=shop.logo)
+
+    .card__cashback
+      .card__cashback-text Кэшбэк до
+
+      .card__cashback-value!= shop.percent + '<div class="card__cashback-small">%</div>'
+        if shop.boost
+          .card__cashback-value-old= shop.boost + "%"
+
+    .card__more-detail
+      a.btn.btn--big.btn--wide(href="#!") Перейти в магазин
+
+      .card__more-detail-tip Кэшбэк может зависить от категории товаров
+
+      .card__more-detail-text Оплаченный заказ: отели
+        .card__more-detail-value 2.46%
+
+      .card__more-detail-text Оплаченный заказ: ж/д
+        .card__more-detail-value 2.05%
+
+      .card__more-detail-text Оплаченный заказ: Авиа
+        .card__more-detail-value 0.93%
+
+
 mixin profile-aside(active)
   .profile__user
     .profile__user-avatar
@@ -51,5 +96,9 @@ mixin profile-aside(active)
   nav.profile__nav
     ul.profile__nav-list
       each item in profileNav
-        li.profile__nav-item(class=[item.name === active ? "active" : ""])
+        li.profile__nav-item(class=[item.name === active ? "active" : ("Мои обращения" === active && "Помощь" === item.name) ? "active-sub" : ""])
           a.profile__nav-link(href=item.url + ".html" class="profile__nav-link--" + item.icon)= item.name
+
+          if item.name === "Помощь"
+            ul.profile__nav-sub-list(class=["Мои обращения" === active ? "active" : ""])
+              a.profile__nav-sub-link(href="profile-ticket.html") Мои обращения

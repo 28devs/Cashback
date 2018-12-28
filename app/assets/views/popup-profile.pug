@@ -1,0 +1,16 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Меню профиля | Cashback
+
+block content
+  .container
+    +breadcrumbs("Меню профиля")
+
+    .container-with-aside
+      .h3 Кликнуть на аватар профиля в шапке.
+        .header__account-avatar
+

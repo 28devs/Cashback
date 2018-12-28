@@ -1,0 +1,96 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Обращение #1461628 | Cashback
+
+block content
+  .container
+    .breadcrumbs
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") cashbackservice.com
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Личный кабинет
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Помощь
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Мои обращения
+      .breadcrumbs__item Обращение #1461622
+
+      nav.breadcrumbs__panel
+        a.breadcrumbs__panel-link(href="#!") Помощь
+        a.breadcrumbs__panel-link(href="#!") Мои обращения
+
+    .container-with-aside
+      main.chat__main
+        +page-title("Другое")
+
+        .card
+          .ticket__chat-header
+            .ticket__chat-user
+              .ticket__chat-user-img-wrapper
+                img.ticket__chat-user-img(src="")
+
+              .ticket__chat-user-name Admin
+
+            .ticket__chat-id Обращение #1461622
+
+          .ticket__chat-content
+            ul.ticket__chat-list
+              each i in [1,2,3,4,5]
+                li.ticket__chat-item
+                  .ticket__chat-item-msg Все на высшем уровне, розеткой пользуюсь не часто, но небольшая часть денег, которая возвращается обратно, всегда радует!!!
+                  .ticket__chat-item-date Сегодня в 16:48
+
+                li.ticket__chat-item.ticket__chat-item--self
+                  .ticket__chat-item-msg Lorem, ipsum dolor sit amet consectetur adipisicing.
+                  .ticket__chat-item-date Сегодня в 16:48
+
+                li.ticket__chat-item
+                  .ticket__chat-item-msg Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis fuga expedita neque dignissimos facilis adipisci fugiat aspernatur perspiciatis vero temporibus cumque suscipit dicta eos, totam omnis aut vel est velit ab recusandae illo. Blanditiis, aliquam iure quidem repellendus officia repudiandae magnam, eligendi qui harum eaque, nostrum reprehenderit natus in quos unde. Iure similique nam eveniet numquam iusto adipisci a, iste exercitationem error. Deleniti, iste animi facilis vel, iure quos nobis quis doloremque adipisci ratione, in nisi vitae nesciunt repudiandae. Ab omnis est officia unde facilis qui quo ullam quam et culpa quia illo, recusandae ea vel in, animi repellat optio!
+                  .ticket__chat-item-date Сегодня в 16:48
+
+          form.ticket__chat-footer(action="#" method="get")
+            .input
+              textarea.input__textarea(name="msg" placeholder="Текст")
+
+            .input
+              label.input__label(for="files") Прикрепленные файлы
+              .input__file
+                .input__file-mark Добавить файл
+                |  или перетащите сюда
+                input.input__file-elem(type="file" multiple)
+
+            button.btn Отправить
+
+
+
+      aside.chat__aside
+        .ticket__chat-info-block
+          .ticket__chat-info
+            .ticket__chat-info-key Инициатор
+            .ticket__chat-info-value Александр Ивченко
+
+          .ticket__chat-info
+            .ticket__chat-info-key Создан
+            .ticket__chat-info-value Сегодня в 16:00
+
+          .ticket__chat-info.ticket__chat-info--devider
+            .ticket__chat-info-key Последнее действие
+            .ticket__chat-info-value Сегодня в 16:00
+
+          .ticket__chat-info
+            .ticket__chat-info-key ID
+            .ticket__chat-info-value #1461622
+
+          .ticket__chat-info
+            .ticket__chat-info-key Статус
+            .ticket__chat-info-value
+              .ticket__chat-info-status открыт
+              //- .ticket__chat-info-status.ticket__chat-info-status--success закрыт
+
+          .ticket__chat-info
+            .ticket__chat-info-key Тема обращения
+            .ticket__chat-info-value Другое

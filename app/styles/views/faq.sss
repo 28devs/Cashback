@@ -1,0 +1,64 @@
+.faq
+
+  &__aside
+
+    &-search
+      margin-bottom: 16px
+
+    &-nav
+      box: vertical left
+
+      &-item
+        text: $dark
+        text-decoration: none
+        padding-bottom: 3px
+        margin: 5px * 11px
+        border-bottom: 1px solid transparent
+        transition: color .1s ease
+
+        &:hover
+          color: $main
+
+        &.active
+          color: $main
+          border-color: $main
+
+  &__item
+    border: 1px solid #EFEFEF
+    border-radius: 4px
+    transition: border-color .1s ease
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+    &:hover
+      border-color: #c7c7c7
+
+    &.open
+      border-color: #c7c7c7
+
+      ^&-title:after
+        background: svg-load("icons/arrow-triangle.svg" fill: #757575)
+        transform: rotate(-90deg)
+
+      ^&-content
+        display: block
+
+    &-title
+      text: 700
+      padding: 19px 20px
+      cursor: pointer
+      box: space-between center
+
+      &:after
+        content: ""
+        display: block
+        size: 5px 10px
+        background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+        transform: rotate(90deg)
+
+    &-content
+      padding: 3px 30px 20px 20px
+      margin-top: -10px
+      display: none
+      line-height: 1.6

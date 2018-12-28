@@ -1,0 +1,55 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Помощь | Cashback
+
+block content
+  .container
+    +breadcrumbs("Личный кабинет")
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Помощь")
+
+      main.profile__main
+        +page-title("Помощь")
+
+        .card.card--top-space
+          .card__content
+            .card__title Настройка профиля
+
+            .card__list
+              each item in profileHelp
+                .faq__item
+                  .faq__item-title(data-accordion)= item
+                  .faq__item-content Кэшбэк фиксируется в течение суток после покупки (за исключение нескольких магазинов. Если кэшбэк фиксируется дольше суток — информация о сроках фиксации всегда размещается на странице магазина). Если прошло меньше времени и заказ сделан согласно правилам — кэшбэк еще обязательно появится в вашем кабинете.
+
+        .card.card--top-space
+          .card__content
+            .card__title Не нашли ответ на свой вопрос? Отправьте нам сообщение
+
+            form.card__form-wide(action="#" method="get")
+              .input.input--select
+                label.input__label.input__label--required(for="theme") Тема обращения
+                select.input__select
+                  option Выберите тему
+                  option Финансы
+                  option Личный кабинет
+                  option Тех. поддержка
+
+              .input
+                label.input__label.input__label--required(for="msg") Сообщение
+                textarea.input__textarea(name="msg" id="msg" placeholder="Текст")
+
+              .input
+                label.input__label(for="files") Прикрепленные файлы
+                .input__file
+                  .input__file-mark Добавить файл
+                  |  или перетащите сюда
+                  input.input__file-elem(type="file" multiple)
+
+              button.btn Отправить
+

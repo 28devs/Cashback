@@ -29,12 +29,20 @@
       background-position: center
       background-repeat: no-repeat
       background-size: contain
-      transition: .1s ease
+      transition: transform .1s ease
 
     &:hover
-
       &:before, &:after
         transform: scale(1.05)
+
+    &--single
+      height: auto
+      border: 0
+      margin-bottom: 0
+
+      &:hover
+        &:before, &:after
+          transform: scale(1)
 
     &--card
       &:before
@@ -89,3 +97,105 @@
 
       ^^&__img
         border-color: $main
+
+  &__form
+    max-width: 380px
+
+    &-back
+      text: $main 16px 1
+      box: center
+      text-decoration: none
+      margin-left: -17px
+      margin-top: -6px
+
+      &:hover
+        text-decoration: underline
+
+      &:before
+        content: ""
+        display: block
+        margin-right: 10px
+        size: 7px 12px
+        background-image: svg-load("icons/arrow.svg" fill: $main)
+        background-size: 7px
+        transform: scale(-1)
+
+    &-header
+      box: space-between left
+      margin: 24px *
+
+      &-info
+        max-width: 620px
+        padding-right: 20px
+
+      &-text
+        margin-bottom: 15px
+
+      &-tip
+        text: 14px
+
+      &-logo
+        margin-top: -31px
+
+    .input
+      margin-bottom: 27px
+
+    &-select-amount
+      text: 600
+      margin-top: 56px
+      margin-bottom: 25px
+
+    &-block-info
+      padding: 19px 20px
+      margin-top: -14px
+      margin-bottom: 40px
+      background: #FAFAFA
+      text: 14px
+
+      a
+        text: 700 $main
+        text-decoration: none
+
+        &:hover
+          text-decoration: underline
+
+    &-confirm
+      margin-top: 47px
+
+      &-title
+        text: 700
+        box: space-between right
+        margin-bottom: 11px
+
+      &-back
+        text: $main 700 14px 1
+        text-decoration: none
+
+        &:hover
+          text-decoration: underline
+
+      &-tip
+        max-width: 520px
+        text: 14px
+        margin-bottom: 30px
+
+        &-center
+          text: 14px center
+          margin-top: 30px
+
+      &-space
+        margin-bottom: 20px
+
+        & + &
+          margin-top: 27px
+
+      &-wrapper
+        max-width: 380px
+
+      &-link
+        color: $dark
+        text-decoration: none
+
+        &:hover
+          text-decoration: underline
+

@@ -7,9 +7,9 @@
     background-color: #252525
     background-repeat: no-repeat
     background-position: center
-    transition: .1s ease
+    transition: filter .1s ease
 
-    @each $icon in facebook, instagram, telegram, vk, twitter, odnoklassniki
+    @each $icon in facebook, instagram, telegram, vk, twitter, odnoklassniki, google-plus
       &--$icon
         background-image: svg-load("icons/$icon.svg")
 
@@ -41,5 +41,75 @@
       &^&--twitter
         background-color: #55ACED
 
+      &^&--google-plus
+        background-color: #d34836
+
       &:hover
         filter: brightness(1.1)
+
+.social-login
+  box: center
+  margin-top: 30px
+
+  &__item
+    box: center
+    text: $dark 300
+    text-decoration: none
+    display: block
+    transition: color .05s ease
+    cursor: default
+
+    &:not(:last-child)
+      margin-right: 50px
+
+    a&
+      cursor: pointer
+
+      &:hover
+        color: $main
+
+        &:before
+          background-color: $main
+
+    &:before
+      content: ""
+      display: block
+      size: 50px
+      min-width: 50px
+      border-radius: 50%
+      background: #CECECE
+      margin-right: 20px
+      background-repeat: no-repeat
+      background-position: center
+      transition: background .1s ease
+
+    &--facebook:before
+      background-image: svg-load("icons/facebook.svg")
+
+    &--vk:before
+      background-image: svg-load("icons/vk.svg")
+      background-size: 28px
+      background-position-y: 18px
+
+    &--google-plus:before
+      background-image: svg-load("icons/google-plus.svg")
+
+    &--active
+
+      &^&--facebook:before
+        background-color: #3A5999
+
+      &^&--vk:before
+        background-color: #4c75a3
+
+      &^&--google-plus:before
+        background-color: #dd4b39
+
+  &__link
+    text: #A0A0A0 14px
+    text-decoration: none
+    position: absolute
+    display: block
+
+    &:hover
+      text-decoration: underline

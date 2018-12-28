@@ -1,0 +1,63 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Отправить обращение | Cashback
+
+block content
+  .container
+    .breadcrumbs
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") cashbackservice.com
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Личный кабинет
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Помощь
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Мои обращения
+      .breadcrumbs__item Отправить обращение
+
+      nav.breadcrumbs__panel
+        a.breadcrumbs__panel-link(href="#!") Помощь
+        a.breadcrumbs__panel-link(href="#!") Мои обращения
+
+    .container-with-aside
+      main.profile__ticket-main
+        +page-title("Отправить обращение")
+
+        .card
+          .card__content
+            .card__title Сообщение
+
+            form.card__form-wide(action="#" method="get")
+              .input.input--select
+                label.input__label.input__label--required(for="theme") Тема обращения
+                select.input__select
+                  option Выберите тему
+                  option Финансы
+                  option Личный кабинет
+                  option Тех. поддержка
+
+              .input
+                label.input__label.input__label--required(for="msg") Сообщение
+                textarea.input__textarea(name="msg" id="msg" placeholder="Текст")
+
+              .input
+                label.input__label(for="files") Прикрепленные файлы
+                .input__file
+                  .input__file-mark Добавить файл
+                  |  или перетащите сюда
+                  input.input__file-elem(type="file" multiple)
+
+              button.btn Отправить
+
+      aside.profile__ticket-aside
+        .ticket__aside-title Найдите ответ на Ваш вопрос здесь
+
+        .ticket__aside-list
+          each item in ticketHelp
+            .faq__item
+              .faq__item-title(data-accordion)= item
+              .faq__item-content Кэшбэк фиксируется в течение суток после покупки (за исключение нескольких магазинов. Если кэшбэк фиксируется дольше суток — информация о сроках фиксации всегда размещается на странице магазина). Если прошло меньше времени и заказ сделан согласно правилам — кэшбэк еще обязательно появится в вашем кабинете.

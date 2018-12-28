@@ -1,0 +1,23 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Уведомления | Cashback
+
+block content
+  .container
+    +breadcrumbs("Уведомления")
+
+    button.btn(data-toast="Магазин добавлен в избранное") Показать уведомление
+    br
+    br
+    button.btn(data-toast="Магазин добавлен в избранное" data-toast-class="success") Показать большое уведомление
+    br
+    br
+    br
+    br
+    br
+    br
+

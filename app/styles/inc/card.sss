@@ -5,7 +5,7 @@
   display: block
   text-decoration: none
   position: relative
-  transition: $transition
+  transition: border-color .2s ease, box-shadow .2s ease
   position: relative
 
   &--shop
@@ -38,12 +38,31 @@
         &-link
           margin-bottom: 32px
 
+  &--shop-detail
+    border: 1px solid #fff
+
+    &:hover
+      box-shadow: 0px 10px 20px rgba(14, 23, 32, 0.15)
+      border-color: $main
+
+    ^&__add-to-favorite
+      transform: translateY(0)
+      visibility: visible
+      opacity: .2
+
+    ^&__logo-wrapper
+      height: 198px
+
+    ^&__cashback
+      padding: 15px * 15px @md 30px * 30px
+
   &__logo
 
     &-wrapper
       box: center middle
       height: 110px @sm 120px
-      transition: .2s ease
+      transition: transform .2s ease, opacity .2s ease
+      padding: 0 15px
 
     &-img
       display: block
@@ -54,7 +73,7 @@
     border-top: 1px solid #EAEAEA
     padding: 15px * 15px @md 20px * 30px
     text: center
-    transition: .25s ease
+    transition: transform .25s ease, opacity .25s ease
     cursor: default
 
     &-text
@@ -89,7 +108,7 @@
     text: #fff 500 12px 20px
     height: 20px
     padding: * 12px
-    transition: .18s ease
+    transition: transform .18s ease, opacity .18s ease
     cursor: default
 
     &--green
@@ -108,15 +127,15 @@
     transform: translateY(20px)
     opacity: 0
     visibility: hidden
-    transition: .2s ease
+    transition: transform .2s ease, opacity .2s ease
 
     &:hover
       opacity: .5 !important
 
   &__more-info
-    position: absolute
+    position: absolute null 0 null 0
     padding: 0 20px 20px
-    transition: .3s ease
+    transition: transform .3s ease, opacity .3s ease
     opacity: 0
 
     &-link
@@ -127,6 +146,26 @@
 
       &:hover
         text-decoration: underline
+
+  &__more-detail
+    padding: 0 20px 39px
+
+    &-tip
+      text: #AFAFAF 11px
+      border-bottom: 1px solid #EAEAEA
+      margin-top: 31px
+      margin-bottom: 28px
+      padding-bottom: 8px
+
+    &-text
+      box: space-between
+      text: 14px
+
+      &:not(:last-child)
+        margin-bottom: 22px
+
+    &-value
+      text: 500
 
   &--is-favorite
     &:hover ^&__add-to-favorite
@@ -323,3 +362,66 @@
 
   &--top-space
     margin-top: 20px
+
+  &__title
+    text: 500 20px
+    margin-bottom: 7px
+    box: right
+
+    &-link
+      text: $main 500 16px
+      text-decoration: none
+      margin-left: auto
+
+      &:hover
+        text-decoration: underline
+
+  &__profile
+    box: left
+
+    &:nth-child(2)
+      margin-top: 19px
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    &-name
+      width: 350px
+
+    &-value
+      text: 700
+
+    &-link
+      text: $main 500
+      text-decoration: none
+      margin-left: auto
+
+      &:hover
+        text-decoration: underline
+
+  &__text
+    line-height: 1.6
+    max-width: 730px
+
+  &__form
+    max-width: 380px
+    margin-top: 30px
+
+    .btn
+      margin-top: 20px
+
+  &__form-wide
+    max-width: 630px
+    margin-top: 24px
+
+    .input
+      margin-bottom: 21px
+
+    .input--select
+      margin-bottom: 27px
+
+    .btn
+      width: 150px
+
+  &__list
+    margin-top: 37px

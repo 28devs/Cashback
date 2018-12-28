@@ -1,0 +1,106 @@
+.reviews
+  margin-bottom: 65px
+
+  &__title
+    @extend .h2
+    margin-bottom: 30px
+
+  &__star
+    size: 24px
+    background-image: svg-load("icons/rating-star-full.svg" fill: $main)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 24px
+
+    &:not(:last-child)
+      margin-right: 13px
+
+    &--half
+      background-image: svg-load("icons/rating-star-half.svg")
+      background-size: 25px
+
+    &--empty
+      background-image: svg-load("icons/rating-star-full.svg" fill: #EEEEEE)
+
+    &--small
+      size: 15px
+      background-size: 15px
+
+      &:not(:last-child)
+        margin-right: 10px
+
+  &__rating
+    box: right
+    margin-bottom: 18px
+
+    &-stars
+      box: center
+      margin-right: 21px
+
+    &-value
+      text: 700 16px 1
+      margin-right: 11px
+
+    &-tip
+      text: #7B7B7B 16px 1
+
+  &__panel
+    box: space-between right
+    margin-bottom: 78px
+
+  &__filter
+    box: center
+
+    &-checkbox
+      margin-right: 10px
+
+  &__list-deep
+    margin-top: 20px
+
+  &__item
+    box: left
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    &-img
+      width: 100%
+      display: block
+      border-radius: 50%
+
+      &-wrapper
+        size: 40px
+        min-width: 40px
+        border-radius: 50%
+        overflow: hidden
+        margin-right: 20px
+        background: #fff svg-load("icons/review-no-avatar.svg")
+
+    &-content
+      border: 1px solid #E0E0E0
+      border-radius: 0 4px 4px 4px
+      padding: 25px 20px 36px
+
+    &-header
+      box: space-between
+      margin-bottom: 7px
+
+    &-name
+      text: 700
+
+    &-date
+      color: #7B7B7B
+
+    &-rating
+      box: right
+      margin-bottom: 25px
+
+      &-tip
+        text: #7B7B7B 16px 1
+        margin-right: 13px
+
+      &-stars
+        box: center
+
+    &-msg
+      line-height: 1.6

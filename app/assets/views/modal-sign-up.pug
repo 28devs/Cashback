@@ -1,0 +1,49 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Модальное окно | Cashback
+
+block content
+  .container
+    +breadcrumbs("Модальное окно")
+
+    .container-with-aside
+      button.btn(data-open-modal="sign-up") Открыть модальное окно
+
+
+  .modal__cover(data-modal="sign-up")
+    .modal__wrapper
+      .modal
+        button.modal__close
+        form.modal__auth(action="#" method="get")
+          .modal__auth-title Создать аккаунт
+
+          .input.input--material
+            input.input__elem(type="text" name="name" placeholder="Имя")
+
+          .input.input--material
+            input.input__elem(type="text" name="surname" placeholder="Фамилия")
+
+          .input.input--material
+            input.input__elem(type="text" name="email" placeholder="Электронная почта")
+
+          .input.input--material
+            input.input__elem(type="password" name="password" placeholder="Пароль")
+
+          .input.input--material
+            input.input__elem(type="password" name="retype-password" placeholder="Повторите пароль")
+
+          button.btn.btn--wide Создать аккаунт
+
+          a.modal__auth-link(href="#!") Войти
+
+          .modal__auth-social
+            .modal__auth-social-title Вход через соцсеть
+            .modal__auth-social-list.social
+              each item in ["vk", "google-plus", "odnoklassniki"]
+                a.social__link.social__link--small.social__link--color(href="#!" class="social__link--" + item)
+
+

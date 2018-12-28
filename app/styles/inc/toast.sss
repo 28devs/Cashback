@@ -1,0 +1,25 @@
+#toast-container
+  position: fixed 100px 20px null null
+
+  .toast
+    background: #FFFFFF
+    border: 1px solid #E4E4E4
+    box-shadow: 0px 5px 20px rgba(14, 23, 32, 0.07)
+    border-radius: 4px
+    transition: .3s ease
+    padding: 30px 45px 30px
+    box: center
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    &.success
+      padding: 30px 45px 30px 40px
+
+      &:before
+        content: ""
+        size: 60px
+        border-radius: 50%
+        background: svg-load("icons/color-success.svg") no-repeat center / contain
+        display: block
+        margin-right: 20px

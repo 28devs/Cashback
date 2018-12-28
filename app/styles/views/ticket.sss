@@ -1,0 +1,123 @@
+.ticket
+
+  &__header
+    box: space-between
+
+  &__title
+    @extend .h2
+    box: center
+    margin-bottom: 15px
+
+    &-tip
+      text: #757575 16px
+      margin-left: 14px
+
+  &__text
+    max-width: 520px
+    line-height: 1.6
+
+  &__create-btn
+    padding: * 20px @sm * 26px
+
+  &__aside
+
+    &-title
+      text: 500 20px
+      margin-top: 111px
+      margin-bottom: 16px
+
+  &__chat
+
+    &-header
+      padding: 10px 40px
+      box: space-between center
+      border-bottom: 1px solid #EAEAEA
+
+    &-user
+      box: center
+
+      &-img
+        @extend .reviews__item-img
+
+        &-wrapper
+          @extend .reviews__item-img-wrapper
+
+      &-name
+        text: 600
+
+    &-id
+      text: #7B7B7B
+
+    &-content
+      padding: 28px 40px 10px
+      max-height: 500px
+      overflow: auto
+
+    &-item
+      background: #F2F2F2
+      padding: 22px 50px 26px 20px
+      border-radius: 0 4px 4px 4px
+
+      &:after
+        content: ""
+        display: block
+        clear: both
+
+      &:not(:last-child)
+        margin-bottom: 30px
+
+      &-msg
+        text: 300 16px 1.6
+
+      &-date
+        text: #7B7B7B 14px
+        float: right
+
+      &--self
+        background: #FFEADE
+        border-radius: 4px 0 4px 4px
+
+    &-footer
+      padding: 20px 40px 40px
+
+      .input__textarea
+        height: 40px
+        margin-bottom: -5px
+
+      .input
+        margin-bottom: 20px
+
+      .btn
+        width: 150px
+
+    &-info
+      box: left
+      padding: 0 38px
+
+      &:not(:last-child)
+        margin-bottom: 21px
+
+      &-key
+        color: #7B7B7B
+        width: 162px
+        padding-right: 20px
+
+      &-block
+        border: 2px solid #EFEFEF
+        border-radius: 4px
+        padding: 40px 0 44px
+
+      &&--devider
+        border-bottom: 1px solid #EAEAEA
+        padding-bottom: 36px
+        margin-bottom: 31px
+
+      &-status
+        border-radius: 4px
+        background: #F9A825
+        text: #fff center
+        padding: 0 19px 2px
+        margin-top: -2px
+
+        &--success
+          background: #00C853

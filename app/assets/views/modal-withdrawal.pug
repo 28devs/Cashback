@@ -1,0 +1,23 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Модальное окно | Cashback
+
+block content
+  .container
+    +breadcrumbs("Модальное окно")
+
+    .container-with-aside
+      button.btn(data-open-modal="withdrawal-success") Открыть модальное окно
+
+
+  .modal__cover(data-modal="withdrawal-success")
+    .modal__wrapper
+      .modal
+        button.modal__close
+        .modal__success
+          .modal__success-icon
+          .modal__success-text Вывод средств заказан

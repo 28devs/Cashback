@@ -1,0 +1,62 @@
+extends layouts/layout.pug
+
+block header
+  +header(true)
+
+block title
+  title Мои обращения | Cashback
+
+block content
+  .container
+    .breadcrumbs
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") cashbackservice.com
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Личный кабинет
+      .breadcrumbs__item
+        a.breadcrumbs__link(href="#!") Помощь
+      .breadcrumbs__item Мои обращения
+
+    .container-with-aside
+      aside.profile__aside
+        +profile-aside("Мои обращения")
+
+      main.profile__main
+        .ticket__header
+          .ticket__header-info
+            h2.ticket__title Мои обращения
+              .ticket__title-tip (клиентский номер: 7165177)
+
+          a.ticket__create-btn.btn.btn--outline-color.btn--big(href="/profile-ticket-create.html") Создать обращение
+
+
+        .card.card--top-space
+          .table.table--tickets
+            .table__head
+              .table__col Тема
+              .table__col ID
+              .table__col Последнее действие
+              .table__col Статус
+
+            a.table__row(href="#!")
+              .table__col
+                .table__desc-value--shop Другое
+
+              .table__col #1461628
+
+              .table__col 28 мин назад
+
+              .table__col
+                .ticket__chat-info-status открыт
+
+            a.table__row(href="#!")
+              .table__col
+                .table__desc-value--shop Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, exercitationem.
+
+              .table__col #1461629
+
+              .table__col 1 мин назад
+
+              .table__col
+                .ticket__chat-info-status.ticket__chat-info-status--success закрыт
+
