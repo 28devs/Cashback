@@ -12,6 +12,7 @@ setInterval(function () {
   i === 3 ? i = -1 : i++;
 }, 1000)
 
+
 //
 // Header mobile menu
 //
@@ -28,6 +29,7 @@ $(".header__mobile-menu").on("click", function () {
 $("[data-accordion]").on("click", function () {
   $(this).parent().toggleClass("open");
 });
+
 
 //
 // Modal
@@ -90,6 +92,7 @@ function getScrollBarWidth() {
   return 100 - widthWithScroll;
 };
 
+
 //
 // Toast
 //
@@ -104,6 +107,7 @@ $("[data-toast]").on("click", function () {
     classes: classes
   });
 });
+
 
 //
 // Popup
@@ -127,6 +131,23 @@ $("[data-hide-popup]").on("click", function () {
   $popup.removeClass("show");
 });
 
-$(window).load(function () {
-  $("body").addClass("load");
+
+//
+// Select
+//
+
+$("[data-select]").on("click", function () {
+  $(this).toggleClass("open");
+});
+
+$("[data-select] [data-value]").on("click", function () {
+  var value = $(this).data("value");
+  var text = $(this).text();
+  var $select = $(this).parents("[data-select]")
+  var name = $select.data("select");
+
+  $select.find("[data-select-text]").addClass("active");
+  $select.find("[data-select-text]").text(text);
+
+  $("input[name=" + name + "]").val(value);
 });

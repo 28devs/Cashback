@@ -13,17 +13,27 @@
     .reviews__rating-tip Общая оценка магазина
 
   .reviews__panel
-    .reviews__filter
+    form.reviews__filter(action="#" method="get")
       .reviews__filter-checkbox.input
         input.input__checkbox(type="checkbox" name="reviews-filter" id="reviews-filter")
         label(for="reviews-filter").input__checkbox-label Показать отзывы только из
 
-      .input.input--select-plain
-        select.input__select-plain
-          option Россия
-          option Казахстан
-          option Беларусь
-          option(selected) Украина
+      .input
+        input(type="hidden" name="filter-country" value="ua")
+        .input__select-custom.input__select-custom--plain(data-select="filter-country")
+          span.input__select-custom-text.active(data-select-text) Украина
+          .input__select-custom-options
+            .input__select-custom-option(data-value="ru") Россия
+            .input__select-custom-option(data-value="kz") Казахстан
+            .input__select-custom-option(data-value="bl") Беларусь
+            .input__select-custom-option(data-value="ua") Украина
+
+      //- .input.input--select-plain
+      //-   select.input__select-plain
+      //-     option Россия
+      //-     option Казахстан
+      //-     option Беларусь
+      //-     option(selected) Украина
 
     button.btn Оставить отзыв
 

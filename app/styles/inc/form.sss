@@ -157,6 +157,60 @@
     &:hover + ::after
       display: none
 
+  &__select-custom
+    @extend .input__elem
+    position: relative
+    box: center
+    cursor: pointer
+    user-select: none
+
+    &:after
+      content: ""
+      display: block
+      margin-left: auto
+      size: 5px 10px
+      transform: rotate(90deg)
+      background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+
+    &-text
+      margin-right: 10px
+
+      &:not(.active)
+        text: #757575
+
+    &-options
+      display: none
+      position: absolute 38px -1px null -1px
+      z-index: 5
+      background: #fff
+      border-radius: 0 0 4px 4px
+      border: 1px solid #e0e0e0
+      padding: 7px 0
+      transition: border-color .1s ease
+
+    &-option
+      height: 40px
+      padding: 10px 17px
+
+      &:hover
+        text: $main
+
+    &.open
+      border-radius: 4px 4px 0 0
+
+      &:after
+        transform: rotate(-90deg)
+
+      ^&-options
+        display: block
+
+    &:hover
+      ^&-options
+        border-color: #c7c7c7
+
+    &--plain
+      border-color: transparent
+
   &__checkbox
     display: none
 

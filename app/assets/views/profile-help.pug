@@ -32,13 +32,24 @@ block content
             .card__title Не нашли ответ на свой вопрос? Отправьте нам сообщение
 
             form.card__form-wide(action="#" method="get")
-              .input.input--select
-                label.input__label.input__label--required(for="theme") Тема обращения
-                select.input__select
-                  option Выберите тему
-                  option Финансы
-                  option Личный кабинет
-                  option Тех. поддержка
+              .input
+                input(type="hidden" name="theme")
+                .input__select-custom(data-select="theme")
+                  span.input__select-custom-text(data-select-text) Выберите тему
+
+                  .input__select-custom-options
+                    .input__select-custom-option(data-value="theme-1") Финансы
+                    .input__select-custom-option(data-value="theme-2") Личный кабинет
+                    .input__select-custom-option(data-value="theme-3") Тех. поддержка
+                    .input__select-custom-option(data-value="theme-4") Другое
+
+              //- .input.input--select
+              //-   label.input__label.input__label--required(for="theme") Тема обращения
+              //-   select.input__select
+              //-     option Выберите тему
+              //-     option Финансы
+              //-     option Личный кабинет
+              //-     option Тех. поддержка
 
               .input
                 label.input__label.input__label--required(for="msg") Сообщение
