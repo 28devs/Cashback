@@ -23,6 +23,12 @@ mixin header(account)
           a.header__account-signin.btn(href="/profile.html") Войти
           button.header__account-signup.btn Регистрация
 
+      .header__mobile-menu(data-show-popup="mobile-menu")
+        .header__mobile-menu-line
+        .header__mobile-menu-line
+        .header__mobile-menu-line
+
+
       .header__profile(data-popup="profile")
         .header__profile-header
           .header__profile-avatar.header__account-avatar
@@ -35,7 +41,34 @@ mixin header(account)
               li.profile__nav-item(class=[item.name === "Мой кабинет" ? "active" : ""])
                 a.profile__nav-link(href=item.url + ".html" class="profile__nav-link--" + item.icon)= item.name
 
-      .header__mobile-menu
-        .header__mobile-menu-line
-        .header__mobile-menu-line
-        .header__mobile-menu-line
+
+      .header__profile(data-popup="mobile-menu")
+        .header__profile-header
+          nav.header__nav.header__nav--mobile
+            a.header__nav-link(href="#!") Как это работает?
+            a.header__nav-link.active(href="/all-shops.html") Магазины
+            a.header__nav-link(href="/faq.html") FAQ
+
+          .header__profile-close(data-hide-popup="mobile-menu")
+
+        .header__mobile-account
+          if account
+            .header__profile-avatar.header__account-avatar
+
+            .header__mobile-account-info
+              .header__profile-name Александр Ивченко
+              .header__account-balance
+                .header__account-balance-mark 5 000 руб. 
+                | / 100 руб.
+
+            a.header__account-notification.header__account-notification--new(href="#!")
+          else
+            a.header__account-signin.btn(href="/profile.html") Войти
+            button.header__account-signup.btn Регистрация
+
+        if account
+          nav.header__profile-nav
+            ul.profile__nav-list
+              each item in profileNav
+                li.profile__nav-item(class=[item.name === "Мой кабинет" ? "active" : ""])
+                  a.profile__nav-link(href=item.url + ".html" class="profile__nav-link--" + item.icon)= item.name

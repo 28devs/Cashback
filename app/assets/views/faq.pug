@@ -9,17 +9,21 @@ block content
 
     .container-with-aside
       aside.faq__aside
-        form.faq__aside-search(action="#" method="get")
-          .input
-            input.input__elem.input__elem--line-style(placeholder="Найти" name="search" autocomplete="off")
-            button.btn.btn--search
+        .faq__aside-header
+          button.faq__aside-categories-btn.btn Категории
 
-        nav.faq__aside-nav
-          a.faq__aside-nav-item(href="#!") Категории магазинов
-          a.faq__aside-nav-item(href="#!") Общие сведения
-          a.faq__aside-nav-item.active(href="#!") Личный кабинет
-          a.faq__aside-nav-item(href="#!") Браузерное расширение
-          a.faq__aside-nav-item(href="#!") Мобильное приложение
+          form.faq__aside-search(action="#" method="get")
+            .input
+              input.input__elem.input__elem--line-style(placeholder="Найти" name="search" autocomplete="off")
+              button.btn.btn--search
+
+        .faq__aside-categories
+          nav.faq__aside-nav
+            a.faq__aside-nav-item(href="#!") Категории магазинов
+            a.faq__aside-nav-item(href="#!") Общие сведения
+            a.faq__aside-nav-item.active(href="#!") Личный кабинет
+            a.faq__aside-nav-item(href="#!") Браузерное расширение
+            a.faq__aside-nav-item(href="#!") Мобильное приложение
 
       main.faq__main
         +page-title("Личный кабинет")

@@ -50,8 +50,8 @@ block content
         .refs__link
           .refs__link-text Ссылка для друга
           .refs__link-input
-            input.input__elem(type="text" value="http://servicename.com/?ru=1622945")
-            button.btn.btn--copy
+            input#ref-link.input__elem(type="text" value="http://servicename.com/?ru=1622945")
+            button.btn.btn--copy(data-clipboard-target="#ref-link")
 
         .refs__link
           .refs__link-text Поделитесь в социальных сетях

@@ -29,20 +29,20 @@
       border-radius: 0
       border: 0
       border-bottom: 1px solid #E0E0E0
-      text: 100 20px
+      text: 100 16px @md 18px @lg 20px
 
       &::placeholder
         text: #C5C5C5
 
       &:focus
-        border-width: 2px
+        border-width: 1px
 
   &__elem
     border: 1px solid #E0E0E0
     background: #fff
     border-color: #E0E0E0
     border-radius: 4px
-    padding: * 17px
+    padding: * 12px @md * 17px
     min-height: 40px
     outline: 0
     text: $dark 300 16px
@@ -61,7 +61,7 @@
 
     &--line-style
       border-radius: 0
-      padding-left: 0
+      padding-left: 0 !important
       border-width: 0 0 1px 0
 
     &:disabled
@@ -78,7 +78,8 @@
   &__file
     @extend .input__elem
     cursor: pointer
-    box: center middle
+    box: vertical center middle @sm horizontal
+    padding: 8px *
 
     &:before
       content: ""
@@ -110,20 +111,26 @@
 
   &__sufix
     position: absolute null 0 20px null
-    padding-left: 12px
-    transform: translate(100%, 50%)
+    padding-left: 0 @md 12px
+    padding-right: 12px @md 0
+    transform: translate(0,50%) @md translate(100%, 50%)
+
+    &--large
+      position: @md-down relative
+      margin-top: @md-down 28px
+      transform: translate(0,0) @md translate(100%, 50%)
 
     &-link
       text: $main 600 14px
       text-decoration: none
-      margin-left: 16px
+      margin-left: @lg 16px
 
       &:hover
         text-decoration: underline
 
     &-tip
-      text: 14px
-      margin-left: 16px
+      text: 14px center @md left
+      margin-left: @lg 16px
       margin-bottom: -1px
 
   &__inner-sufix
@@ -131,7 +138,7 @@
     transform: translate(0, 50%)
 
     &-link
-      text: $main 700 16px
+      text: $main 700 14px @md 16px
       text-decoration: none
 
       &:hover
@@ -185,12 +192,12 @@
       background: #fff
       border-radius: 0 0 4px 4px
       border: 1px solid #e0e0e0
-      padding: 7px 0
+      padding: 4px 0 @md 7px 0
       transition: border-color .1s ease
 
     &-option
-      height: 40px
-      padding: 10px 17px
+      height: 38px @md 40px
+      padding: 8px 12px @md 10px 17px
 
       &:hover
         text: $main
@@ -223,6 +230,7 @@
         content: ""
         display: block
         size: 20px
+        min-width: 20px
         background: #EEEEEE
         margin-right: 12px
         background-repeat: no-repeat
@@ -245,3 +253,38 @@
 
       &::placeholder
         text: #FF0F00
+
+[data-flag="ua"],
+[data-flag="ru"],
+[data-flag="kz"],
+[data-flag="by"]
+  position: relative
+
+  .input__elem
+    padding-left: 64px
+
+  &:after
+    content: ""
+    size: 25px 18px
+    display: block
+    background: #000
+    position: absolute null null 11px 21px
+    box-shadow: 0 0 0 1px #E0E0E0
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+
+  &.disabled:after
+    opacity: .5
+
+[data-flag="ua"]:after
+  background-image: svg-load("icons/flag-ua.svg")
+
+[data-flag="ru"]:after
+  background-image: svg-load("icons/flag-ru.svg")
+
+[data-flag="kz"]:after
+  background-image: svg-load("icons/flag-kz.svg")
+
+[data-flag="by"]:after
+  background-image: svg-load("icons/flag-by.svg")

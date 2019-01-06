@@ -1,6 +1,6 @@
 .btn
-  padding: * 1.5rem
-  text: #fff 300 16px
+  padding: 8px 1.5rem
+  text: #fff 300 15px @md 16px
   text-decoration: none
   font-family: $font
   border: 0
@@ -13,7 +13,7 @@
   display: inline-flex
   align-items: center
   justify-content: center
-  height: 40px
+  min-height: 40px
 
   &:hover
     background-color: #ff772a
@@ -26,13 +26,13 @@
     color: #fff
 
   &--big
-    height: 50px
-    width: @sm-down 100%
+    min-height: 45px @md 50px
+    width: @xs-down 100%
     padding: * 20px @sm * 55px
 
   &--large
-    height: 60px
-    width: @sm-down 100%
+    min-height: 50px @md 60px
+    width: @xs-down 100%
     text: 18px @md 20px
     padding: * 20px @sm * 55px
 
@@ -56,8 +56,8 @@
     text: 500 $main
 
   &--small
-    height: 32px
-    width: 132px
+    min-height: 32px
+    width: 167px
     padding: * 10px
     text: 12px
 
@@ -69,6 +69,7 @@
     background-image: svg-load("icons/search.svg" fill: $dark)
     background-color: transparent
     size: 18px
+    min-height: 18px
     padding: 0
     position: absolute 0 0 0 null
     margin: auto
@@ -86,7 +87,15 @@
     background-position: center
     size: 40px
     border-radius: 0 4px 4px 0
-    margin-left: -2px
 
-    &:hover
-      background-image: svg-load("icons/copy.svg" fill: #fff)
+    &:hover, &:active
+      background-color: transparent
+      background-image: svg-load("icons/copy.svg" fill: $main)
+
+  &--filter
+    background: transparent svg-load("icons/filter.svg" fill: $main) no-repeat center / 32px
+    padding-right: 0
+
+    &:hover, &:active
+      background-color: transparent
+      opacity: .9

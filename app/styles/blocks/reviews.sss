@@ -1,9 +1,9 @@
 .reviews
-  margin-bottom: 65px
+  margin-bottom: 35px @md 55px @lg 65px
 
   &__title
     @extend .h2
-    margin-bottom: 30px
+    margin-bottom: 20px @md 30px
 
   &__star
     size: 24px
@@ -31,7 +31,9 @@
 
   &__rating
     box: right
-    margin-bottom: 28px
+    flex-wrap: wrap @md nowrap
+    justify-content: center @md flex-start
+    margin-bottom: 18px @md 28px
 
     &-stars
       box: center
@@ -39,26 +41,39 @@
 
     &-value
       text: 700 16px 1
-      margin-right: 11px
+      margin-right: @md 11px
 
     &-tip
       text: #7B7B7B 16px 1
+      margin-top: 12px @md 0
+      width: 100% @md auto
+      text-align: center @md left
 
   &__panel
     box: space-between right
-    margin-bottom: 78px
+    flex-wrap: wrap @md nowrap
+    margin-bottom: 38px @md 58px @xl 78px
+
+    .btn
+      margin-top: 15px @md 0
+      width: 100% @md auto
+      max-width: 280px
+      margin: @md-down * auto
 
   &__filter
     box: center
+    margin: @md-down 0 auto
 
     &-checkbox
       margin-right: 10px
 
   &__list-deep
     margin-top: 20px
+    margin-left: 15px @md 0
 
   &__item
-    box: left
+    display: block @md flex
+    align-items: flex-start
 
     &:not(:last-child)
       margin-bottom: 20px
@@ -69,17 +84,21 @@
       border-radius: 50%
 
       &-wrapper
-        size: 40px
-        min-width: 40px
+        size: 30px @sm 40px
+        min-width: 30px @sm 40px
         border-radius: 50%
         overflow: hidden
-        margin-right: 20px
-        background: #fff svg-load("icons/review-no-avatar.svg")
+        margin-right: 15px @lg 20px
+        margin-bottom: -15px @md 0
+        margin-left: 20px @md 0
+        position: relative
+        z-index: 2
+        background: #fff svg-load("icons/review-no-avatar.svg") center / contain
 
     &-content
       border: 1px solid #E0E0E0
       border-radius: 0 4px 4px 4px
-      padding: 25px 20px 36px
+      padding: 25px 20px 20px @md 25px 20px 36px
 
     &-header
       box: space-between
@@ -93,7 +112,7 @@
 
     &-rating
       box: right
-      margin-bottom: 25px
+      margin-bottom: 17px @md 25px
 
       &-tip
         text: #7B7B7B 16px 1

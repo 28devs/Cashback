@@ -17,62 +17,72 @@
 
 .container-with-aside
   box: left
-  margin-bottom: 140px
+  margin-bottom: 50px @md 80px @lg 140px
+  flex-wrap: wrap @xl nowrap
 
 
 .all-shops
   &__aside
-    min-width: 205px
-    margin-right: 35px
-    margin-top: 41px
+    min-width: 100% @lg 205px
+    margin-right: 0 @lg 35px
+    margin-top: 0 @xl 41px
 
   &__main
-    width: 100%
-    margin-top: 41px
+    width: 100% @lg calc(100% - 205px - 35px)
+    margin-top: @xl 41px
 
 
 .profile
   &__aside
     min-width: 240px
     margin-right: 40px
+    display: none @xl block
 
   &__main
     width: 100%
 
   &__ticket-aside
-    min-width: 430px
-    max-width: 430px
-    margin-left: 40px
+    min-width: 100% @lg 430px
+    max-width: @lg 430px
+    margin-left: @lg 40px
 
   &__ticket-main
-    width: 100%
+    width: 100% @lg calc(100% - 430px - 40px)
 
 
 .shop-detail
   &__aside
-    min-width: 290px
-    margin-right: 37px
-    margin-top: 13px
+    min-width: 100% @lg 250px @xl 290px
+    width: 100% @lg 250px @xl 290px
+    margin-right: 0 @lg 30px @xl 37px
+    margin-top: 0 @lg 5px @xl 13px
+    margin-bottom: 40px @lg 0
 
   &__main
-    width: 100%
+    width: 100% @lg calc(100% - 250px - 30px) @xl calc(100% - 290px - 37px)
 
 
 .faq
   &__aside
     min-width: 200px
-    margin-right: 40px
-    margin-top: -6px
+    width: 100% @md 200px
+    margin-right: @md 30px @lg 40px
+    margin-top: @md -6px
 
   &__main
-    width: 100%
+    width: 100% @md calc(100% - 200px - 30px) @lg calc(100% - 200px - 40px)
 
 
 .chat
   &__aside
-    min-width: 390px
-    margin-left: 40px
-    margin-top: 73px
+    min-width: 100% @md 210px @lg 360px @xl 390px
+    width: 100% @md 210px @lg 360px @xl 390px
+    margin-left: 0 @md 25px @lg 30px @xl 40px
+    margin-top: 0 @md 73px
+    margin-bottom: 20px @md 0
+    order: -1 @md 2
+    position: @md sticky
+    top: 100px
 
   &__main
-    width: 100%
+    width: 100% @md calc(100% - 210px - 25px) @lg calc(100% - 360px - 30px) @xl calc(100% - 390px - 40px)

@@ -2,8 +2,28 @@
 
   &__aside
 
+    &-header
+      display: flex @md block
+      flex-direction: column @xs row
+      justify-content: space-between
+      margin-bottom: 20px @md 0
+
+    &-categories
+      margin-top: -4px @md 0
+      margin-bottom: 17px @md 0
+      border-bottom: 1px solid #E0E0E0 @md 0
+
+      &:not(.show)
+        display: none @md block
+
+      &-btn
+        display: block @md none
+
     &-search
-      margin-bottom: 16px
+      margin-bottom: 19px @xs 0 @md 16px
+      margin-left: 0 @xs 20px @md 0
+      width: 100% @xs 240px @md auto
+      order: -1 @xs 3
 
     &-nav
       box: vertical left
@@ -46,7 +66,7 @@
 
     &-title
       text: 700
-      padding: 19px 20px
+      padding: 14px @md 19px 20px
       cursor: pointer
       box: space-between center
 
@@ -54,11 +74,12 @@
         content: ""
         display: block
         size: 5px 10px
-        background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4)
+        min-width: 5px
+        background: svg-load("icons/arrow-triangle.svg" fill: #9A9CA4) no-repeat center / contain
         transform: rotate(90deg)
 
     &-content
-      padding: 3px 30px 20px 20px
+      padding: 3px 20px 20px 14px @md 3px 30px 20px 20px
       margin-top: -10px
       display: none
       line-height: 1.6

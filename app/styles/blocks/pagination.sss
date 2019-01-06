@@ -9,7 +9,7 @@
     box: center middle
 
     &:not(:last-child)
-      margin-right: 19px
+      margin-right: 9px @md 19px
 
     &--text
       cursor: default
@@ -23,11 +23,16 @@
 
       &:hover, &.active
         &:before
-          background: svg-load("icons/arrow-triangle.svg" fill: #fff)
+          background: svg-load("icons/arrow-triangle.svg" fill: $main) @md svg-load("icons/arrow-triangle.svg" fill: #fff)
 
     &--prev:before
       transform: rotate(180deg) translateX(1px)
 
-    &:not(&--text):hover, &.active
+    &:not(&--text):hover
+      background: #fff @md $main
+      color: $main @md #fff
+
+    &.active:hover, &.active
+      min-width: 34px
       background: $main
       color: #fff

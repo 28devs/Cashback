@@ -2,12 +2,12 @@
 
   &__title
     text: 500
-    margin-bottom: 33px
-    margin-top: -8px
+    margin-bottom: 22px @md 33px
+    margin-top: @lg -8px
 
   &__list
     margin: -10px
-    margin-bottom: -31px
+    margin-bottom: 0 @lg -31px
     box: wrap
 
   &__link
@@ -30,6 +30,9 @@
       background-repeat: no-repeat
       background-size: contain
       transition: transform .1s ease
+
+    &:before
+      max-width: calc(100% - 20px)
 
     &:hover
       &:before, &:after
@@ -87,9 +90,9 @@
 
   &__item
     margin: 10px
-    width: calc(25% - 20px)
+    width: calc(50% - 20px) @md calc(100% / 3 - 20px) @lg calc(25% - 20px)
     position: relative
-    margin-bottom: 44px
+    margin-bottom: 15px @md 28px @lg 44px
 
     &:hover
       ^^&__link
@@ -105,8 +108,8 @@
       text: $main 16px 1
       box: center
       text-decoration: none
-      margin-left: -17px
-      margin-top: -6px
+      margin-left: @md -17px
+      margin-top: @md -6px
 
       &:hover
         text-decoration: underline
@@ -122,11 +125,12 @@
 
     &-header
       box: space-between left
+      flex-wrap: wrap @md nowrap
       margin: 24px *
 
       &-info
         max-width: 620px
-        padding-right: 20px
+        padding-right: 0 @md 20px
 
       &-text
         margin-bottom: 15px
@@ -136,19 +140,20 @@
 
       &-logo
         margin-top: -31px
+        display: @md-down none
 
     .input
-      margin-bottom: 27px
+      margin-bottom: 17px @md 27px
 
     &-select-amount
       text: 600
-      margin-top: 56px
-      margin-bottom: 25px
+      margin-top: 38px @md 56px
+      margin-bottom: 17px @md 25px
 
     &-block-info
       padding: 19px 20px
-      margin-top: -14px
-      margin-bottom: 40px
+      margin-top: @md -14px
+      margin-bottom: 30px @md 40px
       background: #FAFAFA
       text: 14px
 
@@ -160,16 +165,17 @@
           text-decoration: underline
 
     &-confirm
-      margin-top: 47px
+      margin-top: 28px @md 47px
 
       &-title
         text: 700
-        box: space-between right
+        box: space-between left
         margin-bottom: 11px
 
       &-back
-        text: $main 700 14px 1
+        text: $main 700 14px
         text-decoration: none
+        margin-left: 10px
 
         &:hover
           text-decoration: underline
@@ -177,17 +183,17 @@
       &-tip
         max-width: 520px
         text: 14px
-        margin-bottom: 30px
+        margin-bottom: 21px @md 30px
 
         &-center
           text: 14px center
-          margin-top: 30px
+          margin-top: 15px @md 30px
 
       &-space
         margin-bottom: 20px
 
         & + &
-          margin-top: 27px
+          margin-top: 20px @md 27px
 
       &-wrapper
         max-width: 380px

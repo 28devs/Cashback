@@ -7,10 +7,10 @@
     border-bottom: 1px solid #EAEAEA
     text: #AFAFAF
     height: 40px
-    padding: 10px 40px
+    padding: 10px 20px @md 10px 40px
 
   &__row
-    padding: 32px 40px 33px
+    padding: 20px @md 32px 40px 33px
 
     &:not(:last-child)
       border-bottom: 1px solid #EAEAEA
@@ -135,6 +135,8 @@
           transform: translateY(0)
 
   &--finances
+    min-width: 810px
+
     ^&__col
       &:nth-child(1)
         width: 150px
@@ -146,12 +148,21 @@
         width: 120px
 
   &--tickets
+    margin-top: 20px @md 0
+
+    ^&__row, ^&__head
+      flex-wrap: wrap @md nowrap
+
+    ^&__head
+      height: @md-down 60px
+
     ^&__col
       &:nth-child(1)
-        width: 330px
+        width: 100% @md 304px @lg 330px
+        margin-bottom: 5px @md 0
       &:nth-child(2)
-        width: 120px
+        width: auto @sm 33% @md 116px @lg 120px
       &:nth-child(3)
-        width: 206px
+        width: auto @sm 33% @md 234px @lg 206px
       &:nth-child(4)
-        width: 90px
+        width: 44px @sm 90px

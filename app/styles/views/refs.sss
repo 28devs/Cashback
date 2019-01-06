@@ -1,28 +1,37 @@
 .refs
 
   &__panel
-    box: 
+    box: wrap
     margin: -10px
-    margin-bottom: 70px
+    margin-bottom: 40px @md 50px @lg 70px
+    margin-top: 10px @md 0
 
   &__col
     margin: 10px
-    width: calc(25% - 20px)
+    margin-bottom: @md-down 0
+    width: 100% @xs calc(50% - 20px) @lg calc(25% - 20px)
 
     .card, .card__content
       height: 100%
 
+    .card__tip
+      padding-right: 20px @lg 0
+
     .card__content
       box: vertical space-between
-      padding-bottom: 31px
+      padding-bottom: @lg 31px
 
   &__link
-    box: center
-    margin-bottom: 40px
+    display: block @md flex
+    align-items: center
+
+    &:not(:last-child)
+      margin-bottom: 30px @md 40px
 
     &-text
-      min-width: 250px
-      margin-right: 20px
+      min-width: @md 250px
+      margin-right: @md 20px
+      margin-bottom: 7px @md 0
 
     &-input
       box: center

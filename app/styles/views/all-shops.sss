@@ -1,13 +1,46 @@
 .all-shops
 
   &__aside
+    margin-bottom: 22px @md 30px @lg 0
 
     &-search
-      margin-bottom: 9px
+      margin-bottom: 18px @xs 0 @lg 9px
+      min-width: 100% @xs 200px @md 320px @lg 205px
+      order: @xs-down -1
 
     &-list
-      padding: 17px *
-      border-bottom: 1px solid #E0E0E0
+      margin: 13px * @md 19px * 0 @lg 17px *
+      padding-bottom: 13px @md 17px
+      border-bottom: 1px solid #E0E0E0 @md 0 @lg 1px solid #E0E0E0
+      width: 100% @md calc(100% / 3) @lg auto
+
+      &:not(:last-child)
+        padding-right: 0 @md 30px @lg 0
+        margin-right: 0 @md 30px @lg 0
+        border-right: 0 @md 1px solid #E0E0E0 @lg 0
+
+      &:last-child
+        margin-bottom: 0
+
+    &-header
+      box: space-between center
+      flex-wrap: wrap @xs nowrap
+
+      > .btn
+        display: @lg none
+
+    &-categories
+      border-bottom: @md 1px solid #E0E0E0 @lg 0
+      display: block @md flex @lg block
+      flex-wrap: wrap @md nowrap
+      justify-content: space-between
+
+    &-filters
+      border-bottom: @lg-down 1px solid #e0e0e0
+
+    &-categories, &-filters
+      &:not(.show)
+        display: none @lg block
 
     &-item
 
@@ -35,6 +68,7 @@
         content: ""
         display: block
         size: 20px
+        min-width: 20px
         margin-right: 8px
         background-repeat: no-repeat
         background-position: center
@@ -48,22 +82,26 @@
         text-decoration: underline
 
     &-group
-      margin: 24px * 42px
+      margin: 24px 0 26px @lg 24px 0 42px
 
     &-title
       text: 500
       margin-bottom: 15px
 
+    &-checkbox
+      display: block @md inline-block @lg block
+
     &-checkbox:not(:last-child)
-      margin-bottom: 21px
+      margin-bottom: 18px @md 0 @lg 21px
+      margin-right: 0 @md 20px @lg 0
 
   &__main
 
     &-list
       box: wrap
-      margin-bottom: 30px @md 40px @lg 58px
-      margin: -5px @xs -10px
+      margin: -5px @sm -10px
+      margin-bottom: 30px @sm 35px @md 40px @lg 58px
 
     &-item
-      width: calc(50% - 5px) @xs calc(50% - 10px) @sm calc(100% - 20px) @md calc(25% - 20px) @lg calc(25% - 20px)
-      margin: 5px @xs 10px
+      width: calc(50% - 10px) @sm calc(100% / 3 - 20px) @md calc(25% - 20px) @lg calc(25% - 20px)
+      margin: 5px @sm 10px

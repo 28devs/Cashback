@@ -57,10 +57,10 @@ block content
               .withdrawal__form-confirm-tip Для повышения защиты вашего аккаунта, привяжите свой номер телефона.<br>Привязка номера телефона сделает последующие выводы средств быстрее.
 
               .withdrawal__form-confirm-wrapper
-                .withdrawal__form-confirm-space.input
+                .withdrawal__form-confirm-space.input.disabled
                   label.input__label(for="phone") Номер телефона
-                  input.input__elem(type="text" name="phone" id="phone" placeholder="Введите номер телефона" value="+730456867434" disabled)
-                  .input__sufix
+                  input.input__elem(type="text" name="phone" id="phone" placeholder="Введите номер телефона" value="+380997777777" disabled)
+                  .input__sufix.input__sufix--large
                     a.input__sufix-link(href="/profile-withdrawal-step-4.html") Указать другой номер
 
                 .withdrawal__form-confirm-space.input
@@ -69,7 +69,7 @@ block content
 
                 .input
                   button.btn.btn--wide Подтвердить
-                  .input__sufix
+                  .input__sufix.input__sufix--large
                     .input__sufix-tip Сообщение с кодом подтерждения<br> отправлено на ваш номер телефона
 
                 .withdrawal__form-confirm-tip-center

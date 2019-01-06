@@ -23,7 +23,7 @@
       background-color: #0c0c0c
 
     &--small
-      size: 35px @lg 40px
+      size: 40px
 
       &:not(:last-child)
         margin-right: 16px @lg 20px
@@ -48,19 +48,20 @@
         filter: brightness(1.1)
 
 .social-login
-  box: center
-  margin-top: 30px
+  box: vertical @md horizontal center
+  margin-top: 15px @md 30px
 
   &__item
     box: center
-    text: $dark 300
+    text: $dark 300 14px @md 16px
     text-decoration: none
     display: block
     transition: color .05s ease
     cursor: default
 
     &:not(:last-child)
-      margin-right: 50px
+      margin-right: @md 50px
+      margin-bottom: @md-down 12px
 
     a&
       cursor: pointer
@@ -78,7 +79,7 @@
       min-width: 50px
       border-radius: 50%
       background: #CECECE
-      margin-right: 20px
+      margin-right: 15px @md 20px
       background-repeat: no-repeat
       background-position: center
       transition: background .1s ease

@@ -8,6 +8,12 @@
   transition: border-color .2s ease, box-shadow .2s ease
   position: relative
 
+  &--sm-full-width
+    margin: @xs-down * -15px
+
+  &--scroll
+    overflow: auto
+
   &--shop
     height: 100%
     min-width: 116px
@@ -28,18 +34,20 @@
         opacity: 0
 
       ^^&__cashback
-        transform: translateY(-112px)
+        transform: translateY(-99px) @md translateY(-106px)
         border-top-color: transparent
 
       ^^&__more-info
-        transform: translateY(-130px)
+        transform: translateY(-103px) @md translateY(-111px) @xl translateY(-122px)
         opacity: 1
 
         &-link
-          margin-bottom: 32px
+          margin-bottom: 16px @md 24px
 
   &--shop-detail
     border: 1px solid #fff
+    display: block @md flex @lg block
+    flex-wrap: wrap
 
     &:hover
       box-shadow: 0px 10px 20px rgba(14, 23, 32, 0.15)
@@ -51,10 +59,35 @@
       opacity: .2
 
     ^&__logo-wrapper
-      height: 198px
+      height: 120px @lg 198px
+      width: 100% @md 50% @lg 100%
 
     ^&__cashback
-      padding: 15px * 15px @md 30px * 30px
+      padding: 15px * 15px @md 30px * 10px @lg 30px * 30px
+      width: auto @md 43% @lg auto
+      position: relative
+      top: 0 @md 28px @lg 0
+      border-top-width: 1px @md 0 @lg 1px
+      transform: @md scale(1.5) @lg none
+
+    ^&__more-detail
+      width: 100%
+      padding: @md 0 20px 23px @lg 0 20px 39px
+      display: block @md flex @lg block
+      flex-wrap: wrap
+      align-items: flex-start
+      justify-content: space-around
+
+      &-tip
+        width: 100%
+        text-align: center @lg left
+
+      &-text
+        flex-direction: row @md column @lg row
+
+      .btn
+        width: 100% @md 50% @lg 100%
+        margin-right: 0 @md 50% @lg 0
 
   &__logo
 
@@ -85,9 +118,9 @@
       position: relative
 
       &-old
-        text: #A2A2A2 20px
-        position: relative @sm absolute 0 null null 0
-        transform: @sm translate(-120%, 50%)
+        text: #A2A2A2 15px @md 20px
+        position: absolute 0 null null 0
+        transform: translate(-120%,68%) @md translate(-120%, 50%)
 
         &:before
           content: ""
@@ -119,7 +152,7 @@
 
   &__add-to-favorite
     @extend .btn-reset
-    size: 24px
+    size: 18px @md 24px
     position: absolute 8px 8px null null
     z-index: 5
     background-image: svg-load("icons/star.svg" fill: $dark)
@@ -134,9 +167,11 @@
 
   &__more-info
     position: absolute null 0 null 0
-    padding: 0 20px 20px
+    padding: 0 10px 20px @xl 0 20px 20px
     transition: transform .3s ease, opacity .3s ease
     opacity: 0
+    box: vertical space-between
+    height: 112px
 
     &-link
       text: $main 12px 1.5 center none
@@ -148,24 +183,27 @@
         text-decoration: underline
 
   &__more-detail
-    padding: 0 20px 39px
+    padding: 0 20px 25px @md 0 20px 39px
 
     &-tip
       text: #AFAFAF 11px
       border-bottom: 1px solid #EAEAEA
-      margin-top: 31px
-      margin-bottom: 28px
-      padding-bottom: 8px
+      margin-top: 29px @lg 31px
+      margin-bottom: 21px @lg 28px
+      padding-bottom: 6px @lg 8px
 
     &-text
-      box: space-between
+      box: space-between @md center @lg space-between
       text: 14px
 
       &:not(:last-child)
-        margin-bottom: 22px
+        margin-bottom: 8px @md 0 @lg 22px
+        margin-right: 0 @md 15px @lg 0
 
     &-value
-      text: 500
+      text: 500 14px @md 18px @lg 14px
+      margin-left: 10px @md 0 @lg 10px
+      margin-top: 0 @md 5px @lg 0
 
   &--is-favorite
     &:hover ^&__add-to-favorite
@@ -178,7 +216,7 @@
       visibility: visible
 
   &__content
-    padding: 35px 40px 39px
+    padding: 20px @md 35px 40px 39px
 
   &__tip
     text: #AFAFAF 14px
@@ -186,16 +224,18 @@
 
     &-value
       text: $dark 700
+      text-align: right
+      margin-left: 10px
 
   &__big-value
-    text: 30px
+    text: 24px @md 30px
 
     &-currency
       text: 300 20px
       display: inline-block
 
   &__large-value
-    text: 40px
+    text: 28px @md 40px
 
     &-currency
       text: 300 20px
@@ -244,6 +284,8 @@
   &__read-more
     text: #AFAFAF 14px 1
     text-decoration: none
+    white-space: nowrap
+    margin-left: 10px
 
     &:after
       content: ""
@@ -261,14 +303,14 @@
       margin-bottom: 3px
 
     ^&__large-value
-      margin-bottom: 21px
+      margin-bottom: 13px @md 21px
 
   &--status
-    margin: 20px *
+    margin: 10px * @md 20px *
 
     ^&__content
       display: flex
-      flex-wrap: wrap @md nowrap
+      flex-wrap: wrap @lg nowrap
 
     ^&__big-value
       box: space-between
@@ -277,22 +319,37 @@
       padding-bottom: 4px
 
     ^&__tip
-      margin-bottom: 14px
+      margin-bottom: 10px @md 14px
+      text-align: @sm-down center
+      display: @sm-down block
+
+      &-value
+        margin-left: @sm-down 0
+        margin-top: @sm-down 3px
+        text-align: @sm-down center
 
   &--email
-    margin: 20px *
+    margin: 10px * @md 20px *
 
     ^&__content
       display: flex
       align-items: center
-      flex-wrap: wrap @md nowrap
+      flex-wrap: wrap @lg nowrap
 
     ^&__info-title
-      margin-bottom: 5px
+      margin-bottom: 9px @md 5px
+      text: center @md left
+
+    ^&__info-text
+      text: center @md left
 
     ^&__info-panel
-      margin-top: 33px
-      margin-bottom: 5px
+      margin-top: 20px @lg 33px
+      margin-bottom: @lg 5px
+
+      .btn
+        width: @md-down 100%
+        margin-right: @md-down 0
 
     ^&__info-tip
       line-height: 1
@@ -300,18 +357,20 @@
   &__info
 
     &-title
-      text: 300 24px
+      text: 300 22px @md 24px
 
     &-text
       box: space-between
+
+      &--block
+        display: block
 
       &-value
         text: 500
 
       &-mark
         text: 700
-        display: inline
-        margin: * 5px
+        display: @md inline
 
     &-panel
       box: wrap
@@ -319,6 +378,7 @@
 
       > *:not(:last-child)
         margin-right: 16px
+        margin-bottom: 10px @md 0
 
     &-link
       text: #3371C0 700 14px
@@ -332,10 +392,10 @@
 
       &-spacer
         > *:not(:last-child)
-          margin-bottom: 12px
+          margin-bottom: 7px @md 12px
 
     &-spacer
-      margin: 33px * 20px
+      margin: 18px * 15px @md 33px * 20px
 
       > *:not(:last-child)
         margin-bottom: 6px
@@ -346,25 +406,30 @@
 
     .card__label
       left: auto
-      top: 20px
-      right: 20px
+      top: 0 @xs 20px
+      right: 0 @xs 20px
 
   &--status-info
     height: 100%
 
     ^&__tip
-      margin-bottom: 15px
+      margin-bottom: 6px @md 15px
 
     ^&__big-value
       box: space-between
+      flex-wrap: wrap @md nowrap
       align-items: baseline
       margin-bottom: 1px
 
+    ^&__read-more
+      margin-left: @md-down 0
+      margin: @md-down 5px *
+
   &--top-space
-    margin-top: 20px
+    margin-top: 10px @md 20px
 
   &__title
-    text: 500 20px
+    text: 500 18px @md 20px
     margin-bottom: 7px
     box: right
 
@@ -377,51 +442,57 @@
         text-decoration: underline
 
   &__profile
-    box: left
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap @md nowrap
 
     &:nth-child(2)
-      margin-top: 19px
+      margin-top: 14px @md 19px
 
     &:not(:last-child)
-      margin-bottom: 20px
+      margin-bottom: 15px @md 20px
 
     &-name
-      width: 350px
+      width: 100% @md 260px @lg 350px
+      margin-bottom: 3px @md 0
 
     &-value
       text: 700
+      width: 100% @md auto
+      margin-bottom: 3px @md 0
 
     &-link
       text: $main 500
       text-decoration: none
-      margin-left: auto
+      margin-left: @md auto
 
       &:hover
         text-decoration: underline
 
   &__text
-    line-height: 1.6
+    text: 14px 1.5 @md 16px 1.6
     max-width: 730px
 
   &__form
     max-width: 380px
-    margin-top: 30px
+    margin-top: 20px @md 30px
 
     .btn
-      margin-top: 20px
+      margin-top: 10px @md 20px
 
   &__form-wide
     max-width: 630px
-    margin-top: 24px
+    margin-top: 17px @md 24px
 
     .input
-      margin-bottom: 21px
+      margin-bottom: 16px @md 21px
 
     .input--select
-      margin-bottom: 27px
+      margin-bottom: 20px @md 27px
 
     .btn
-      width: 150px
+      width: 100% @md 150px
+      margin-top: 5px @md 0
 
   &__list
-    margin-top: 37px
+    margin-top: 15px @md 30px @lg 37px

@@ -18,7 +18,7 @@ block content
         +page-title("Личный кабинет")
 
         .profile__row
-          .profile__col
+          .profile__col.profile__col--md
             .card.card--balance
               .card__circle-label.card__circle-label--currency
               .card__content
@@ -27,7 +27,7 @@ block content
                   .card__large-value-currency ₽
                 a.btn.btn--outline.btn--small(href="/profile-withdrawal.html") Вывести средства
 
-          .profile__col
+          .profile__col.profile__col--md
             .card.card--balance
               .card__circle-label.card__circle-label--wait
               .card__content
@@ -44,50 +44,51 @@ block content
               .card__big-value Железо
                 a.card__read-more(href="#!") Подробнее
 
-              .profile__progress.profile__progress--is-iron
-                .profile__progress-row
-                  .profile__progress-col
-                  .profile__progress-col
-                    .profile__progress-percent.profile__progress-percent--bronze +10%
-                  .profile__progress-col
-                    .profile__progress-percent.profile__progress-percent--silver +20%
-                  .profile__progress-col
-                    .profile__progress-percent.profile__progress-percent--gold +30%
+              .profile__progress-wrapper
+                .profile__progress.profile__progress--is-iron
+                  .profile__progress-row
+                    .profile__progress-col
+                    .profile__progress-col
+                      .profile__progress-percent.profile__progress-percent--bronze +10%
+                    .profile__progress-col
+                      .profile__progress-percent.profile__progress-percent--silver +20%
+                    .profile__progress-col
+                      .profile__progress-percent.profile__progress-percent--gold +30%
 
-                .profile__progress-row
-                  .profile__progress-col
-                    .profile__progress-icon.profile__progress-icon--iron
-                  .profile__progress-col
-                    .profile__progress-icon.profile__progress-icon--bronze
-                  .profile__progress-col
-                    .profile__progress-icon.profile__progress-icon--silver
-                  .profile__progress-col
-                    .profile__progress-icon.profile__progress-icon--gold
+                  .profile__progress-row
+                    .profile__progress-col
+                      .profile__progress-icon.profile__progress-icon--iron
+                    .profile__progress-col
+                      .profile__progress-icon.profile__progress-icon--bronze
+                    .profile__progress-col
+                      .profile__progress-icon.profile__progress-icon--silver
+                    .profile__progress-col
+                      .profile__progress-icon.profile__progress-icon--gold
 
-                .profile__progress-row
-                  .profile__progress-col
-                    .profile__progress-name Железо
-                  .profile__progress-col
-                    .profile__progress-name Бронза
-                  .profile__progress-col
-                    .profile__progress-name Серебро
-                  .profile__progress-col
-                    .profile__progress-name Золото
+                  .profile__progress-row
+                    .profile__progress-col
+                      .profile__progress-name Железо
+                    .profile__progress-col
+                      .profile__progress-name Бронза
+                    .profile__progress-col
+                      .profile__progress-name Серебро
+                    .profile__progress-col
+                      .profile__progress-name Золото
 
-                .profile__progress-line
-                  .profile__progress-line-circle
-                  .profile__progress-line-circle
-                  .profile__progress-line-circle
-                  .profile__progress-line-circle
+                  .profile__progress-line
+                    .profile__progress-line-circle
+                    .profile__progress-line-circle
+                    .profile__progress-line-circle
+                    .profile__progress-line-circle
 
-                .profile__progress-row
-                  .profile__progress-col
-                  .profile__progress-col
-                    .profile__progress-value 12 000 руб.
-                  .profile__progress-col
-                    .profile__progress-value 24 000 руб.
-                  .profile__progress-col
-                    .profile__progress-value 48 000 руб.
+                  .profile__progress-row
+                    .profile__progress-col
+                    .profile__progress-col
+                      .profile__progress-value 12 000 руб.
+                    .profile__progress-col
+                      .profile__progress-value 24 000 руб.
+                    .profile__progress-col
+                      .profile__progress-value 48 000 руб.
 
             .profile__info
               .card__tip До статуса Bronze осталось:
@@ -113,9 +114,9 @@ block content
 
             .profile__email-content
               .card__info-title Подтвердите свой Email для активации аккаунта
-              .card__info-text Мы отправили вам письмо на 
+              .card__info-text.card__info-text--block Мы отправили вам письмо на 
                 .card__info-text-mark graphic.ivchenko@gmail.com
-                | со ссылкой активации.
+                |  со ссылкой активации.
 
               .card__info-panel
                 a.btn.btn--outline.btn--small(href="#!") Проверить Email

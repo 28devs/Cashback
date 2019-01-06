@@ -6,6 +6,7 @@
   overflow: auto
   transform: translateY(-14px)
   transition: transform .15s ease
+  margin: 15px
 
   &__wrapper
     box: center middle
@@ -33,7 +34,9 @@
 
   &__close
     size: 22px
-    position: absolute 20px 20px null null
+    position: absolute
+    right: 15px @lg 20px
+    top: 15px @lg 20px
     background: svg-load("icons/cross.svg" fill: $dark) no-repeat center / 18px
     opacity: .3
     cursor: pointer
@@ -46,36 +49,44 @@
       opacity: .5
 
   &__success
-    padding: 80px 111px 70px
+    padding: 40px 25px 45px @md 50px 60px 50px @lg 80px 111px 70px
 
     &-icon
-      size: 120px
+      size: 60px @md 70px @lg 100px @xl 120px
       border-radius: 50%
       background: svg-load("icons/color-success.svg") no-repeat center / contain
-      margin: 0 auto 30px
+      margin: 0 auto
+      margin-bottom: 15px @md 20px @lg 30px
 
     &-text
-      text: 35px
+      text: 20px center @md 28px @lg 32px @xl 35px
 
   &__how-it-works
-    padding: 67px 63px 101px
+    padding: 27px 25px 34px @sm 37px 35px 40px @md 53px 39px 69px @lg 67px 63px 101px
+    max-width: 100% @sm 480px @md 100%
 
     &-title
-      text: 35px center
-      margin-bottom: 80px
+      text: 25px center @md 30px @lg 35px
+      margin-bottom: 28px @sm 40px @md 60px @lg 80px
 
     &-list
       box: space-between
+      flex-wrap: wrap @md nowrap
 
     &-item
-      max-width: 280px
+      max-width: 100% @md 280px
+      width: 100%
+      display: flex @md block
 
       &:not(:last-child)
-        margin-right: 40px
+        margin-right: @md 40px
+        margin-bottom: 24px @sm 30px @md 0
 
     &-img
-      size: 100% 80px
-      margin-bottom: 35px
+      size: 50px @md 100% 70px @lg 100% 80px
+      min-width: @md-down 50px
+      margin-bottom: 0 @md 25px @lg 35px
+      margin-right: 20px @md 0
       background-repeat: no-repeat
       background-position: center
       background-size: contain
@@ -90,28 +101,28 @@
         background-image: svg-load("icons/color-icon-3.svg")
 
     &-name
-      text: 700 20px center
+      text: 700 16px left @md center @lg 20px center
       margin-bottom: 8px
 
     &-text
-      text: 16px 1.6 center
+      text: 14px 1.6 left @md center @lg 16px center
 
   &__auth
-    padding: 38px 40px 45px
-    width: 400px
+    padding: 25px 25px 35px @md 38px 40px 45px
+    width: 270px @xs 320px @md 400px
 
     &-title
-      text: 500 20px
-      margin-bottom: 30px
+      text: 500 18px @md 20px
+      margin-bottom: 17px @md 30px
 
     .input
-      margin-bottom: 38px
+      margin-bottom: 22px @md 28px @lg 38px
 
     .btn
-      margin-bottom: 36px
+      margin-bottom: 26px @md 36px
 
     &-social
-      margin-bottom: 46px
+      margin-bottom: 30px @md 46px
 
       &-title
         text: 500 center
@@ -129,5 +140,5 @@
         opacity: .8
 
       + ^&-social
-        margin-top: 40px
+        margin-top: 25px @md 40px
         margin-bottom: 0

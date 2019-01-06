@@ -14,15 +14,6 @@ setInterval(function () {
 
 
 //
-// Header mobile menu
-//
-
-$(".header__mobile-menu").on("click", function () {
-  $(this).toggleClass("open")
-})
-
-
-//
 // Accordion
 //
 
@@ -121,6 +112,7 @@ $("[data-show-popup]").on("click", function () {
   var id = $(this).data("show-popup");
   var $popup = $("[data-popup=" + id + "]");
 
+  $("[data-popup]").removeClass("show");
   $popup.addClass("show");
 });
 
@@ -151,3 +143,91 @@ $("[data-select] [data-value]").on("click", function () {
 
   $("input[name=" + name + "]").val(value);
 });
+
+
+//
+// Mobile btns in all-shops page
+//
+
+$(".all-shops__aside-categories-btn").on("click", function () {
+  $(".all-shops__aside-categories").toggleClass("show");
+  $(".all-shops__aside-filters").removeClass("show");
+});
+
+$(".all-shops__aside-filters-btn").on("click", function () {
+  $(".all-shops__aside-filters").toggleClass("show");
+  $(".all-shops__aside-categories").removeClass("show")
+});
+
+
+//
+// Mobile btn in faq page
+//
+
+$(".faq__aside-categories-btn").on("click", function () {
+  $(".faq__aside-categories").toggleClass("show");
+});
+
+
+//
+// Referral page
+//
+
+$(".refs__link-input input").on("click", function () {
+  $(this).select();
+});
+
+
+//
+// Init clipboard.js on copy btns
+//
+
+new ClipboardJS('.btn--copy');
+
+
+//
+// Phone inputs
+//
+
+var $inputPhones = $("[name=phone]");
+
+Inputmask({
+  mask: "+99 999 999 9999",
+  placeholder: "",
+  clearIncomplete: true,
+}).mask($inputPhones);
+
+$inputPhones.on("keyup blur", setCountryFlag);
+
+$inputPhones.each(setCountryFlag);
+
+function setCountryFlag() {
+  var $input = $(this);
+  var phoneCode = $input.val().slice(0, 3);
+
+  if ($input.val().lenght < 3) {
+    $input.parent().attr("data-flag", "")
+  }
+
+  switch (phoneCode) {
+    case "+38":
+      $input.parent().attr("data-flag", "ua")
+      break;
+
+    case "+79":
+      $input.parent().attr("data-flag", "ru")
+      break;
+
+    case "+77":
+      $input.parent().attr("data-flag", "kz")
+      break;
+
+    case "+37":
+      $input.parent().attr("data-flag", "by")
+      break;
+
+    default:
+      $input.parent().attr("data-flag", "")
+      break;
+  }
+}

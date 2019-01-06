@@ -5,27 +5,38 @@
     margin: -10px
 
   &__col
-    width: 100% @md calc(50% - 20px)
+    width: 100% @lg calc(50% - 20px)
     margin: 10px
+    margin-bottom: @md-down 0
+
+    &--md
+      width: 100% @md calc(50% - 20px)
+
+    &--sm
+      width: 100% @sm calc(50% - 20px)
 
   &__status
-    width: 67%
-    margin-right: 40px
-    padding-right: 40px
-    border-right: 1px solid #EAEAEA
+    width: 100% @lg 67%
+    margin-right: @lg 40px
+    padding-right: @lg 40px
+    border-right: @lg 1px solid #EAEAEA
+    border-bottom: 1px solid #EAEAEA @lg 0
+    margin-bottom: 21px @lg 0
+    padding-bottom: 13px @lg 0
 
   &__info
-    width: 40%
+    width: 100% @lg 40%
 
   &__premium
     box: left
-    margin-top: 73px
+    justify-content: @md-down center
+    margin-top: 26px @md 45px @lg 73px
 
     &-icon
-      size: 60px 58px
-      margin-right: 25px
-      margin-top: -20px
-      background: resolve("icons/color-gold.svg")
+      size: 50px @md 60px
+      margin-right: 19px @md 25px
+      margin-top: -13px @md -20px
+      background: resolve("icons/color-gold.svg") no-repeat center / contain
 
     &-title
       text: 700 14px
@@ -38,14 +49,21 @@
 
     &-text
       text: 14px
-      margin-bottom: 21px
+      margin-bottom: 13px @md 21px
 
   &__progress
     margin-top: 19px
     margin-bottom: 7px
+    padding-bottom: 80px
+    overflow: auto
+
+    &-wrapper
+      height: 144px
+      overflow: hidden
 
     &-row
       box: space-between
+      min-width: 350px
 
     &-col
       width: 73px
@@ -81,10 +99,9 @@
 
     &-line
       height: 4px
-      max-width: 413px
+      min-width: 320px
       background: #F5F5F5
-      margin-bottom: 14px
-      margin: * auto
+      margin: 0 16px 14px
       box: space-between
       position: relative
 
@@ -184,21 +201,30 @@
           &:after
             background: linear-gradient(90deg, #b0bec5, #ffd54f)
 
-  &__email-icon
-    size: 70px
-    margin-right: 40px
-    background: resolve("icons/color-letter.svg")
+  &__email
+
+    &-content
+      .card__info-panel
+        justify-content: center @md flex-start
+
+    &-icon
+      size: 55px @md 70px
+      min-width: 55px @md 70px
+      margin-right: auto @md 0 @lg 40px
+      margin-left: auto @md 0
+      margin-bottom: 20px @lg 0
+      background: resolve("icons/color-letter.svg") no-repeat center / contain
 
   &__status
 
     &-icon
-      size: 103px 98px
-      margin-bottom: 22px
+      size: 60px @md 103px 98px
+      margin-bottom: 12px @md 22px
       background: resolve("icons/color-gold.svg") no-repeat center / contain
 
       &-wrapper
         box: vertical center
-        margin-top: 30px
+        margin-top: 18px @md 30px
 
     &-text
       text: 700

@@ -20,8 +20,16 @@
     &-form
       width: 100% @md 330px @lg 350px @xl 300px
       max-width: 350px
-      margin: * 20px @sm * 28px @md 0
+      margin: * 20px @sm * 28px @md 0 auto 0 auto
       position: relative
+      transition: .2s ease
+      left: 0
+      right: 0
+
+      &:hover
+        max-width: @xs-down unset
+        transform: @xs-down translateX(-60px)
+        margin-right: @xs-down -86px
 
     &-input
       padding-left: @md-down 11px
@@ -66,9 +74,21 @@
         border-color: $main
         color: $main
 
+    &--mobile
+      position: static !important
+
+      ^&-link
+        text: 14px
+        margin-right: 17px @sm 23px
+        margin-bottom: 2px
+        top: 3px
+        position: relative
+        white-space: nowrap
+
   &__account
     box: horizontal right middle
     position: @lg-down absolute -999px null null null
+    margin-left: auto
 
     &-signin
       margin-right: 20px
@@ -129,6 +149,7 @@
     -webkit-tap-highlight-color: transparent
     user-select: none
     transition: transform $transition
+    margin-left: 0 @lg 28px
 
     &-line
       size: 100% 3px
@@ -151,14 +172,15 @@
 
   &__profile
     position: absolute 0 0 null null
+    left: @xs-down 0
     z-index: 9
     background: #FFF
     box-shadow: 0px 5px 20px rgba(14, 23, 32, 0.07)
     border-radius: 0 0 4px 4px
-    min-width: 330px
+    min-width: @xs 330px
 
     &-header
-      height: 81px
+      height: 61px @md 81px
       padding: 0 20px
       border-bottom: 1px solid #EAEAEA
       box: center
@@ -186,6 +208,35 @@
 
     &-nav
       padding: 10px 0
+      max-height: calc(100vh - 81px)
+      overflow: auto
 
       .profile__nav-link:before
         margin-left: 22px
+
+  &__mobile
+
+    &-account
+      padding: 15px 20px
+      box: center
+      border-bottom: 1px solid #eaeaea
+
+      .header__account-signin
+        margin-right: 15px
+
+      .header__account-signin,
+      .header__account-signup
+        width: 100%
+
+      .header__account-notification
+        margin-right: 0
+        margin-left: auto
+
+      .header__account-balance
+        margin-left: 0
+        margin-right: 0
+        margin-top: 5px
+        text: 14px
+
+      + .header__profile-nav
+        max-height: calc(100vh - 81px - 61px) @md calc(100vh - 81px * 2)
